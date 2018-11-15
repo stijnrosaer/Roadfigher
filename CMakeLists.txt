@@ -4,4 +4,6 @@ project(projectGP)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "-Wall")
 
-ADD_SUBDIRECTORY(src)
+set(SRC main.cpp)
+
+add_executable(roadfighter ${SRC})
