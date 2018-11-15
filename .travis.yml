@@ -9,7 +9,7 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
-        - libopenal-dev
+    - libopenal-dev
     - libjpeg-dev
     - libudev-dev
     - libxrandr-dev
