@@ -3,3 +3,5 @@
 //
 
 #include "PlayerCar.h"
+
+roadfighter::PlayerCar::PlayerCar() {}

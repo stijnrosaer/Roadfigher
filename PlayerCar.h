@@ -9,6 +9,11 @@
 
 namespace roadfighter {
     class PlayerCar : public Entity {
+    private:
+
+
+    public:
+        PlayerCar();
 
     };
 }

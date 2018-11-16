@@ -6,10 +6,15 @@
 #define PROJECTGP_WORLD_H
 
 #include "Entity.h"
+#include "PlayerCar.h"
 
 namespace roadfighter {
     class World : public Entity {
-
+    private:
+        shared_ptr<roadfighter::Entity> player = roadfighter::Entity::createEntity("player");
+        vector<shared_ptr<Entity>> racingCars;
+        vector<shared_ptr<Entity>> passingCars;
+        vector<shared_ptr<Entity>> Bullets;
     };
 }
 
