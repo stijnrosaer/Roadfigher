@@ -8,7 +8,7 @@
 #include "Entity.h"
 
 namespace roadfighter {
-    class RacingCar : public Entity {
+    class RacingCar : public roadfighter::Entity {
 
     };
 }

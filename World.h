@@ -9,7 +9,7 @@
 #include "PlayerCar.h"
 
 namespace roadfighter {
-    class World : public Entity {
+    class World : public roadfighter::Entity {
     private:
         shared_ptr<roadfighter::Entity> player = roadfighter::Entity::createEntity("player");
         vector<shared_ptr<Entity>> racingCars;
