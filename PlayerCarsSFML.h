@@ -5,12 +5,10 @@
 #ifndef PROJECTGP_PLAYERCARSSFML_H
 #define PROJECTGP_PLAYERCARSSFML_H
 
-
 #include "PlayerCar.h"
 
 namespace roadfighterSFML {
     class PlayerCar : public roadfighter::PlayerCar {
-
     };
 }
 
