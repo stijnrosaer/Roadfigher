@@ -11,10 +11,8 @@
 namespace roadfighter {
     class World : public roadfighter::Entity {
     private:
-        shared_ptr<roadfighter::Entity> player = roadfighter::Entity::createEntity("player");
-        vector<shared_ptr<Entity>> racingCars;
-        vector<shared_ptr<Entity>> passingCars;
-        vector<shared_ptr<Entity>> Bullets;
+        vector<shared_ptr<roadfighter::Entity>> entities;
+
     };
 }
 
