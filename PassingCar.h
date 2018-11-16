@@ -9,6 +9,10 @@
 
 namespace roadfighter {
     class PassingCar : public roadfighter::Entity {
+    private:
+
+
+    public:
 
     };
 }

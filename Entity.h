@@ -13,6 +13,8 @@ using namespace std;
 
 namespace roadfighter {
     class Entity {
+    private:
+
     public:
         static shared_ptr<Entity> createEntity(string name);
 

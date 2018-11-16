@@ -9,6 +9,10 @@
 #include "PlayerCarSFML.h"
 
 class Game {
+private:
+
+
+public:
 
 };
 

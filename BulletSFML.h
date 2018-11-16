@@ -9,6 +9,10 @@
 
 namespace roadfighterSFML {
     class Bullet : public roadfighter::Bullet {
+    private:
+
+
+    public:
 
     };
 }

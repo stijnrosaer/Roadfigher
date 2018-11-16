@@ -17,6 +17,10 @@ struct coordinate{
 };
 
 class Transformation {
+private:
+
+
+public:
 
 };
 

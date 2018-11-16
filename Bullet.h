@@ -9,6 +9,10 @@
 
 namespace roadfighter {
     class Bullet : public Entity {
+    private:
+
+
+    public:
 
     };
 }

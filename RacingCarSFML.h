@@ -9,6 +9,10 @@
 
 namespace roadfighterSFML {
     class RacingCar : public roadfighter::RacingCar {
+    private:
+
+
+    public:
 
     };
 }

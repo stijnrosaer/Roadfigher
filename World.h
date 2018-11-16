@@ -13,6 +13,8 @@ namespace roadfighter {
     private:
         vector<shared_ptr<roadfighter::Entity>> entities;
 
+    public:
+
     };
 }
 

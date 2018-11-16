@@ -9,6 +9,10 @@
 
 namespace roadfighter {
     class RacingCar : public roadfighter::Entity {
+    private:
+
+
+    public:
 
     };
 }
