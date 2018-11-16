@@ -6,9 +6,12 @@
 #define PROJECTGP_PLAYERCARSSFML_H
 
 #include "PlayerCar.h"
+#include <SFML/Graphics.hpp>
 
 namespace roadfighterSFML {
     class PlayerCar : public roadfighter::PlayerCar {
+
+
     };
 }
 

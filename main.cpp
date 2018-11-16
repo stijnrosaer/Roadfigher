@@ -1,11 +1,13 @@
 #include <iostream>
 #include "Transformation.h"
 #include "World.h"
-#include "PlayerCarsSFML.h"
+#include "PlayerCarSFML.h"
+#include "Game.h"
 
 using namespace std;
 
 int main(){
+    Game game;
     roadfighter::World world;
 
     return 0;
