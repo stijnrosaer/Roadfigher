@@ -11,9 +11,11 @@
 namespace roadfighter {
     class World : public roadfighter::Entity {
     private:
+        shared_ptr<roadfighter::Entity> player;
         vector<shared_ptr<roadfighter::Entity>> entities;
 
     public:
+        World();
 
     };
 }

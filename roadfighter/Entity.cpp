@@ -8,6 +8,9 @@
 #include "RacingCar.h"
 #include "Bullet.h"
 
+roadfighter::Entity::Entity() {
+}
+
 shared_ptr<roadfighter::Entity> roadfighter::Entity::createEntity(string name) {
     if (name == "playerCar"){
         return make_shared<roadfighter::PlayerCar>();

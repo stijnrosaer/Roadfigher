@@ -3,3 +3,7 @@
 //
 
 #include "World.h"
+
+roadfighter::World::World() {
+    this->player = roadfighter::Entity::createEntity("player");
+}

@@ -14,6 +14,8 @@ struct coordinate{
         x = x_co;
         y = y_co;
     }
+
+    coordinate() = default;
 };
 
 class Transformation {

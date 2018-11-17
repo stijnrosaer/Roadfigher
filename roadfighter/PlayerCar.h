@@ -10,11 +10,10 @@
 namespace roadfighter {
     class PlayerCar : public roadfighter::Entity {
     private:
-
+        coordinate loc;
 
     public:
         PlayerCar();
-
     };
 }
 

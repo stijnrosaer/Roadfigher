@@ -4,4 +4,7 @@
 
 #include "PlayerCar.h"
 
-roadfighter::PlayerCar::PlayerCar() {}
+
+roadfighter::PlayerCar::PlayerCar() : roadfighter::Entity() {
+    this->loc = {0, -2};
+}

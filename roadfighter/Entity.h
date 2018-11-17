@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include "../Transformation.h"
 
 using namespace std;
 
@@ -16,7 +17,13 @@ namespace roadfighter {
     private:
 
     public:
-        static shared_ptr<Entity> createEntity(string name);
+        // constructor
+        Entity();
+
+        static shared_ptr<roadfighter::Entity> createEntity(string name);
+
+        // getters and setters
+
 
     };
 }
