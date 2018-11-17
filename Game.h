@@ -6,13 +6,18 @@
 #define PROJECTGP_GAME_H
 
 
-#include "PlayerCarSFML.h"
+#include "roadfighterSFML/PlayerCarSFML.h"
+#include "roadfighter/World.h"
 
 class Game {
 private:
-
+    sf::Window window;
+//    roadfighter::World;
 
 public:
+    Game();
+
+
 
 };
 

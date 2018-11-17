@@ -6,7 +6,6 @@
 
 Transformation* Transformation::trans = nullptr;
 
-Transformation::Transformation() {}
 Transformation::~Transformation() {}
 
 Transformation *Transformation::Instance() {

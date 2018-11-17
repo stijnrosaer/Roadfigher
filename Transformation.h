@@ -25,10 +25,6 @@ public:
     virtual ~Transformation();
     static Transformation* Instance();
     coordinate transformTo2DWorldSpace(coordinate & co, float width, float height);
-
-protected:
-    Transformation();
-
 };
 
 

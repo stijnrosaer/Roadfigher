@@ -1,12 +1,16 @@
 #include <iostream>
 #include "Transformation.h"
-#include "World.h"
-#include "PlayerCarSFML.h"
 #include "Game.h"
 
 using namespace std;
 
 int main(){
+    Game g;
+
+
+
+    coordinate a(3,-1);
+    coordinate b = Transformation::Instance()->transformTo2DWorldSpace(a, 40, 30);
     roadfighter::World world;
 
     return 0;
