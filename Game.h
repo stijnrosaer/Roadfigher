@@ -11,11 +11,12 @@
 
 class Game {
 private:
-    sf::Window window;
-//    roadfighter::World;
+    sf::RenderWindow window;
+    shared_ptr<roadfighter::World> world;
 
 public:
     Game();
+    void run();
 
 
 

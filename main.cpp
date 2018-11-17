@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
     Game g;
-
+    g.run();
 
 
     coordinate a(3,-1);
