@@ -15,7 +15,11 @@ namespace roadfighter {
         vector<shared_ptr<roadfighter::Entity>> entities;
 
     public:
+        // constructor
         World();
+
+        // getters and setters
+        const shared_ptr<Entity> &getPlayer() const;
 
     };
 }

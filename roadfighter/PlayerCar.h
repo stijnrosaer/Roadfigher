@@ -13,7 +13,13 @@ namespace roadfighter {
         coordinate loc;
 
     public:
+        // constructor
         PlayerCar();
+
+
+        // functions
+        const coordinate &GetLocation() const override;
+
     };
 }
 

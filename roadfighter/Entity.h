@@ -23,6 +23,7 @@ namespace roadfighter {
         static shared_ptr<roadfighter::Entity> createEntity(string name);
 
         // getters and setters
+        virtual const coordinate& GetLocation() const = 0;
 
 
     };

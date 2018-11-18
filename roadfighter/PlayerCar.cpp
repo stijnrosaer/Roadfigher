@@ -8,3 +8,7 @@
 roadfighter::PlayerCar::PlayerCar() : roadfighter::Entity() {
     this->loc = {0, -2};
 }
+
+const coordinate &roadfighter::PlayerCar::GetLocation() const {
+    return this->loc;
+}

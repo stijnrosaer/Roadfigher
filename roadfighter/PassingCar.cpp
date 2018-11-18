@@ -3,3 +3,9 @@
 //
 
 #include "PassingCar.h"
+
+roadfighter::PassingCar::PassingCar() {}
+
+const coordinate &roadfighter::PassingCar::GetLocation() const {
+    return this->loc;
+}

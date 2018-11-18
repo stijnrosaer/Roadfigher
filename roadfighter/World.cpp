@@ -7,3 +7,7 @@
 roadfighter::World::World() {
     this->player = roadfighter::Entity::createEntity("player");
 }
+
+const shared_ptr<roadfighter::Entity> &roadfighter::World::getPlayer() const {
+    return player;
+}

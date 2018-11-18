@@ -3,3 +3,9 @@
 //
 
 #include "Bullet.h"
+
+roadfighter::Bullet::Bullet() {}
+
+const coordinate &roadfighter::Bullet::GetLocation() const {
+    return this->loc;
+}

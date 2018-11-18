@@ -19,6 +19,18 @@ void Game::run() {
                 window.close();
         }
         window.clear();
+
+        // all actions come here
+
+        sf::Texture pTexture;
+        sf::Sprite pSprite;
+
+        pTexture.loadFromFile("../lib/playerCar.png");
+        pSprite.setTexture(pTexture);
+        pSprite.setPosition(400, 500);
+
+        window.draw(pSprite);
+
         window.display();
     }
 }

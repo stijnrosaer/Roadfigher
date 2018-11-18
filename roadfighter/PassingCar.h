@@ -10,9 +10,15 @@
 namespace roadfighter {
     class PassingCar : public roadfighter::Entity {
     private:
-
+        coordinate loc;
 
     public:
+        // constructor
+        PassingCar();
+
+
+        // functions
+        const coordinate &GetLocation() const override;
 
     };
 }
