@@ -3,3 +3,8 @@
 //
 
 #include "PlayerCarSFML.h"
+
+roadfighterSFML::PlayerCar::PlayerCar() {
+    this->texture.loadFromFile("../lib/playerCar.png");
+
+}

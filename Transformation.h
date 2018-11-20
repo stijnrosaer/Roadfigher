@@ -26,7 +26,7 @@ private:
 public:
     virtual ~Transformation();
     static Transformation* Instance();
-    coordinate transformTo2DWorldSpace(coordinate & co, float width, float height);
+    coordinate transformTo2DWorldSpace(const coordinate & co, float width, float height);
 };
 
 

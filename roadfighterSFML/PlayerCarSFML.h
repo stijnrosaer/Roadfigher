@@ -11,10 +11,12 @@
 namespace roadfighterSFML {
     class PlayerCar : public roadfighter::PlayerCar {
     private:
+        sf::Texture texture;
+        sf::Sprite sprite;
 
 
     public:
-
+        PlayerCar();
 
     };
 }

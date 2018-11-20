@@ -5,9 +5,13 @@
 #include "World.h"
 
 roadfighter::World::World() {
-    this->player = roadfighter::Entity::createEntity("player");
+    this->player = make_shared<roadfighter::PlayerCar>();
 }
 
 const shared_ptr<roadfighter::Entity> &roadfighter::World::getPlayer() const {
     return player;
+}
+
+const coordinate &roadfighter::World::GetLocation() const {
+    throw "No getlocation in world";
 }
