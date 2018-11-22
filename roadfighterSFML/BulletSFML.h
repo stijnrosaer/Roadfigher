@@ -5,10 +5,14 @@
 #ifndef PROJECTGP_BULLETSFML_H
 #define PROJECTGP_BULLETSFML_H
 
-#include "Bullet.h"
+#include "../roadfighter/Bullet.h"
 
 namespace roadfighterSFML {
     class Bullet : public roadfighter::Bullet {
+    private:
+
+
+    public:
 
     };
 }

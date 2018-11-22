@@ -9,6 +9,16 @@
 
 namespace roadfighter {
     class Bullet : public Entity {
+    private:
+        coordinate loc;
+
+    public:
+        // constructor
+        Bullet();
+
+
+        // functions
+        const coordinate &GetLocation() const override;
 
     };
 }

@@ -6,16 +6,17 @@
 #define PROJECTGP_GAME_H
 
 
-#include "PlayerCarSFML.h"
+#include "roadfighterSFML/PlayerCarSFML.h"
+#include "roadfighter/World.h"
 
 class Game {
 private:
-    shared_ptr<roadfighterSFML::PlayerCar> player;
-    const int width = 800;
-    const int height = 600;
+    sf::RenderWindow window;
+    shared_ptr<roadfighter::World> world;
+
 public:
     Game();
-
+    void run();
 
 };
 

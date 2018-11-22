@@ -8,13 +8,21 @@
 #include <iostream>
 #include <vector>
 #include <memory>
+#include "../Transformation.h"
 
 using namespace std;
 
 namespace roadfighter {
     class Entity {
+    private:
+
     public:
-        static shared_ptr<Entity> createEntity(string name);
+        // constructor
+        Entity();
+
+        // getters and setters
+        virtual const coordinate& GetLocation() const = 0;
+
 
     };
 }

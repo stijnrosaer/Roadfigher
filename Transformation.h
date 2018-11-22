@@ -14,10 +14,19 @@ struct coordinate{
         x = x_co;
         y = y_co;
     }
+
+    coordinate() = default;
 };
 
 class Transformation {
+private:
 
+    static Transformation* trans;
+
+public:
+    virtual ~Transformation();
+    static Transformation* Instance();
+    coordinate transformTo2DWorldSpace(const coordinate & co, float width, float height);
 };
 
 

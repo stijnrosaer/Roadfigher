@@ -5,10 +5,14 @@
 #ifndef PROJECTGP_PASSINGCARSFML_H
 #define PROJECTGP_PASSINGCARSFML_H
 
-#include "PassingCar.h"
+#include "../roadfighter/PassingCar.h"
 
 namespace roadfighterSFML {
     class PassingCar : public roadfighter::PassingCar {
+    private:
+
+
+    public:
 
     };
 }

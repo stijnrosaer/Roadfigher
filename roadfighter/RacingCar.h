@@ -9,6 +9,17 @@
 
 namespace roadfighter {
     class RacingCar : public roadfighter::Entity {
+    private:
+        coordinate loc;
+
+
+    public:
+        // constructor
+        RacingCar();
+
+
+        // functions
+        const coordinate &GetLocation() const override;
 
     };
 }
