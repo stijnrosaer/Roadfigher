@@ -3,6 +3,7 @@
 //
 
 #include "Game.h"
+#include <chrono>
 
 Game::Game() {
     window.create(sf::VideoMode(400, 300), "Roadfighter");
@@ -12,12 +13,27 @@ Game::Game() {
 }
 
 void Game::run() {
+    auto startTime = chrono::high_resolution_clock::now();
+    auto stopTime = chrono::high_resolution_clock::now();
+
+    double fps = 30;
+    double tpf = 1/fps;
+
     sf::Texture pTexture;
     sf::Sprite pSprite;
     pTexture.loadFromFile("../lib/playerCar.png");
     pSprite.setTexture(pTexture);
 
     while (window.isOpen()) {
+        startTime = chrono::high_resolution_clock::now();
+        stopTime = chrono::high_resolution_clock::now();
+        chrono::duration<double> elapsed = stopTime - startTime;
+
+
+        while (elapsed.count() < tpf){
+            stopTime = chrono::high_resolution_clock::now();
+            elapsed = stopTime - startTime;
+        }
 
         sf::Event event{};
         while (window.pollEvent(event)) {
