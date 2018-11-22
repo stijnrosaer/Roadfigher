@@ -16,8 +16,8 @@ addons:
     - libfreetype6-dev
     - libvorbis-dev
     - libflac-dev
-    - g++-8
-    - gcc-8
+    - g++-8.0
+    - gcc-8.0
 
 
 before_install:
@@ -31,7 +31,7 @@ before_install:
 - export PATH=$PWD/cmake-dist/bin:$PATH;
 
 install:
-- if [ "$CXX" = "g++" ]; then export CXX="g++-8" CC="gcc-8"; fi
+- if [ "$CXX" = "g++" ]; then export CXX="g++-8.0" CC="gcc-8.0"; fi
 
 script:
   - mkdir build
