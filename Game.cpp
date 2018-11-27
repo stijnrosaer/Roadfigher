@@ -43,12 +43,7 @@ void Game::run() {
         window.clear();
 
         // all actions come here
-        coordinate loc2 = Transformation::Instance()->transformTo2DWorldSpace(world->getPlayer()->GetLocation(), window.getSize().x, window.getSize().y);
-
-        cout << "========" << endl;
-        cout << window.getSize().x << endl;
-        cout << loc2.x << endl;
-        cout << "========" << endl;
+        coordinate loc2 = Transformation::Instance()->transformTo2DWorldSpace(world->getPlayer()->GetLocation(), window.getView().getSize().x, window.getView().getSize().y);
 
         pSprite.setPosition(loc2.x, loc2.y);
 
