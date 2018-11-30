@@ -6,12 +6,14 @@
 #define PROJECTGP_GAME_H
 
 
-#include "roadfighterSFML/PlayerCarSFML.h"
-#include "roadfighter/World.h"
+#include "roadfighterSFML/include/PlayerCarSFML.h"
+#include "roadfighter/include/World.h"
+#include "roadfighter/include/Factory.h"
 
 class Game {
 private:
-    sf::RenderWindow window;
+    shared_ptr<roadfighter::Factory> fac;
+    shared_ptr<sf::RenderWindow> window;
     shared_ptr<roadfighter::World> world;
 
 public:

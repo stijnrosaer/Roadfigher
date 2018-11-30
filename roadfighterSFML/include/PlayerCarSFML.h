@@ -5,18 +5,22 @@
 #ifndef PROJECTGP_PLAYERCARSSFML_H
 #define PROJECTGP_PLAYERCARSSFML_H
 
-#include "../roadfighter/PlayerCar.h"
+#include "../../roadfighter/include/PlayerCar.h"
 #include <SFML/Graphics.hpp>
 
 namespace roadfighterSFML {
     class PlayerCar : public roadfighter::PlayerCar {
     private:
+        pair<float, float> pixloc;
         sf::Texture texture;
         sf::Sprite sprite;
+        shared_ptr<sf::RenderWindow> window;
 
 
     public:
-        PlayerCar();
+        PlayerCar(shared_ptr<sf::RenderWindow> window);
+        void draw() override;
+
 
     };
 }

@@ -3,12 +3,17 @@
 //
 
 #include "Game.h"
+#include "roadfighterSFML/include/FactorySFML.h"
 #include <chrono>
 
 Game::Game() {
-    window.create(sf::VideoMode(400, 300), "Roadfighter");
-    window.setFramerateLimit(60);
+    fac = make_shared<roadfighterSFML::Factory>();
+    window = make_shared<sf::RenderWindow>(sf::VideoMode(400, 300), "Roadfighter");
     this->world = make_shared<roadfighter::World>();
+
+    world->setPlayer(fac->createPlayerCar(window));
+
+    cout << "";
 
 }
 
@@ -19,12 +24,7 @@ void Game::run() {
     double fps = 30;
     double tpf = 1/fps;
 
-    sf::Texture pTexture;
-    sf::Sprite pSprite;
-    pTexture.loadFromFile("../lib/playerCar.png");
-    pSprite.setTexture(pTexture);
-
-    while (window.isOpen()) {
+    while (window->isOpen()) {
         startTime = chrono::high_resolution_clock::now();
         stopTime = chrono::high_resolution_clock::now();
         chrono::duration<double> elapsed = stopTime - startTime;
@@ -36,20 +36,18 @@ void Game::run() {
         }
 
         sf::Event event{};
-        while (window.pollEvent(event)) {
+        while (window->pollEvent(event)) {
             if (event.type == sf::Event::Closed)
-                window.close();
+                window->close();
         }
-        window.clear();
+        window->clear();
 
         // all actions come here
-        coordinate loc2 = Transformation::Instance()->transformTo2DWorldSpace(world->getPlayer()->GetLocation(), window.getView().getSize().x, window.getView().getSize().y);
+        world->getPlayer()->draw();
+        // todo: wat is het nut van world als subklasse van entity
 
-        pSprite.setPosition(loc2.x, loc2.y);
 
-        window.draw(pSprite);
-
-        window.display();
+        window->display();
 
     }
 }

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "../Transformation.h"
+#include "../../Transformation.h"
 
 using namespace std;
 
@@ -21,7 +21,8 @@ namespace roadfighter {
         Entity();
 
         // getters and setters
-        virtual const coordinate& GetLocation() const = 0;
+        virtual const pair<float, float> & GetLocation() const = 0;
+        virtual void draw() = 0;
 
 
     };

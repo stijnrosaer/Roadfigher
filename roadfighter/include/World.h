@@ -21,8 +21,13 @@ namespace roadfighter {
         // getters and setters
         const shared_ptr<Entity> &getPlayer() const;
 
+
+        void setPlayer(const shared_ptr<Entity> &player);
+
         // functions
-        const coordinate &GetLocation() const override;
+        const pair<float, float> &GetLocation() const override;
+
+        void draw() override;
 
     };
 }

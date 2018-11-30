@@ -5,28 +5,17 @@
 #ifndef PROJECTGP_TRANSFORMATION_H
 #define PROJECTGP_TRANSFORMATION_H
 
-
-struct coordinate{
-    float x;
-    float y;
-
-    coordinate(float x_co, float y_co){
-        x = x_co;
-        y = y_co;
-    }
-
-    coordinate() = default;
-};
+#include <memory>
 
 class Transformation {
 private:
 
-    static Transformation* trans;
+    static std::shared_ptr<Transformation> trans;
 
 public:
     virtual ~Transformation();
-    static Transformation* Instance();
-    coordinate transformTo2DWorldSpace(const coordinate & co, float width, float height);
+    static std::shared_ptr<Transformation> Instance();
+    std::pair<float, float> transformTo2DWorldSpace(const std::pair<float, float> & co, float width, float height);
 };
 
 

@@ -10,7 +10,7 @@
 namespace roadfighter {
     class PlayerCar : public roadfighter::Entity {
     private:
-        coordinate loc;
+        pair<float, float> loc;
 
     public:
         // constructor
@@ -18,7 +18,8 @@ namespace roadfighter {
 
 
         // functions
-        const coordinate &GetLocation() const override;
+        const pair<float, float> &GetLocation() const override;
+        void draw() override = 0;
 
     };
 }

@@ -2,13 +2,13 @@
 // Created by stijn on 16/11/18.
 //
 
-#include "PlayerCar.h"
+#include "../include/PlayerCar.h"
 
 
 roadfighter::PlayerCar::PlayerCar() : roadfighter::Entity() {
     this->loc = {0, -2};
 }
 
-const coordinate &roadfighter::PlayerCar::GetLocation() const {
+const pair<float, float> &roadfighter::PlayerCar::GetLocation() const {
     return this->loc;
 }
