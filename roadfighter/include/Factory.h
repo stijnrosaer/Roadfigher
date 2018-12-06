@@ -14,8 +14,8 @@ namespace roadfighter {
     public:
         virtual ~Factory();
 
-        virtual std::shared_ptr<roadfighter::Entity> createPlayerCar(shared_ptr<sf::RenderWindow> window) = 0;
-        virtual std::shared_ptr<roadfighter::Entity> createPassingCar(shared_ptr<sf::RenderWindow> window) = 0;
+        virtual std::shared_ptr<roadfighter::Entity> createPlayerCar() = 0;
+        virtual std::shared_ptr<roadfighter::Entity> createPassingCar() = 0;
 
     };
 }

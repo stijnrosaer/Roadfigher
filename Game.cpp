@@ -7,11 +7,11 @@
 #include <chrono>
 
 Game::Game() {
-    fac = make_shared<roadfighterSFML::Factory>();
     window = make_shared<sf::RenderWindow>(sf::VideoMode(400, 300), "Roadfighter");
     this->world = make_shared<roadfighter::World>();
+    fac = make_shared<roadfighterSFML::Factory>(window);
 
-    world->setPlayer(fac->createPlayerCar(window));
+    world->setPlayer(fac->createPlayerCar());
 
     cout << "";
 

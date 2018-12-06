@@ -5,7 +5,7 @@
 #ifndef PROJECTGP_PASSINGCARSFML_H
 #define PROJECTGP_PASSINGCARSFML_H
 
-#include "../../roadfighter/include/PassingCar.h"
+#include "PassingCar.h"
 #include "SFML/Graphics.hpp"
 
 namespace roadfighterSFML {

@@ -19,12 +19,6 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 set(SRC main.cpp
         Random.cpp Random.h
         Transformation.cpp Transformation.h
-        roadfighter/src/Entity.cpp roadfighter/include/Entity.h
-        roadfighter/src/PlayerCar.cpp roadfighter/include/PlayerCar.h
-        roadfighter/src/RacingCar.cpp roadfighter/include/RacingCar.h
-        roadfighter/src/PassingCar.cpp roadfighter/include/PassingCar.h
-        roadfighter/src/Bullet.cpp roadfighter/include/Bullet.h
-        roadfighter/src/World.cpp roadfighter/include/World.h
         Game.cpp Game.h
         roadfighterSFML/src/PlayerCarSFML.cpp roadfighterSFML/include/PlayerCarSFML.h
         roadfighterSFML/src/RacingCarSFML.cpp roadfighterSFML/include/RacingCarSFML.h
@@ -40,17 +34,9 @@ add_subdirectory(roadfighter/include)
 INCLUDE_DIRECTORIES(${lib})
 
 # The program we're compiling with the sources set above
-add_executable(roadfighter ${SRC})
+add_executable(RoadFighter ${SRC})
 
 # Link target to SFML libs
 # (The SFML_LIBRARIES variable is defined by FindSFML.cmake, if SFML was found)
-TARGET_LINK_LIBRARIES(roadfighter ${SFML_LIBRARIES})
-TARGET_LINK_LIBRARIES(roadfighter Roadfighter)
-
-
-
-
-
-
-
-
+TARGET_LINK_LIBRARIES(RoadFighter ${SFML_LIBRARIES})
+TARGET_LINK_LIBRARIES(RoadFighter Roadfighter)
