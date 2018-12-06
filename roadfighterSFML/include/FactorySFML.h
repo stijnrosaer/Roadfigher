@@ -13,6 +13,7 @@ namespace roadfighterSFML {
         virtual ~Factory();
 
         shared_ptr<roadfighter::Entity> createPlayerCar(shared_ptr<sf::RenderWindow> window) override;
+        shared_ptr<roadfighter::Entity> createPassingCar(shared_ptr<sf::RenderWindow> window) override;
 
 
     };

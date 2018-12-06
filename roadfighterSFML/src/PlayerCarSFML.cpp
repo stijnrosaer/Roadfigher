@@ -8,7 +8,7 @@
 
 roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window) {
     this->window = std::move(window);
-    this->texture.loadFromFile("../lib/playerCar.png");
+    this->texture.loadFromFile("../img/playerCar.png");
     sprite.setTexture(texture);
 
     pixloc = Transformation::Instance()->transformTo2DWorldSpace(loc, this->window->getView().getSize().x, this->window->getView().getSize().y);
