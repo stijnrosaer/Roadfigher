@@ -34,7 +34,6 @@ set(SRC main.cpp
 # Add include dirs for SFML
 # (The SFML_INCLUDE_DIR variable is defined by FindSFML.cmake, if SFML was found)
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
-add_subdirectory(roadfighter)
 
 # The program we're compiling with the sources set above
 add_executable(fighter ${SRC})
@@ -42,7 +41,6 @@ add_executable(fighter ${SRC})
 # Link target to SFML libs
 # (The SFML_LIBRARIES variable is defined by FindSFML.cmake, if SFML was found)
 TARGET_LINK_LIBRARIES(fighter ${SFML_LIBRARIES})
-TARGET_LINK_LIBRARIES(fighter roadfighter)
 
 
 

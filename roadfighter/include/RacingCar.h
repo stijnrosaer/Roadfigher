@@ -9,7 +9,7 @@
 
 namespace roadfighter {
     class RacingCar : public roadfighter::Entity {
-    private:
+    protected:
         pair<float, float> loc;
 
 
@@ -19,7 +19,6 @@ namespace roadfighter {
 
 
         // functions
-        const pair<float, float> &GetLocation() const override;
         void draw() override = 0;
 
     };

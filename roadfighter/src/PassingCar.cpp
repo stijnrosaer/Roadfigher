@@ -5,7 +5,3 @@
 #include "../include/PassingCar.h"
 
 roadfighter::PassingCar::PassingCar() {}
-
-const pair<float, float> &roadfighter::PassingCar::GetLocation() const {
-    return this->loc;
-}

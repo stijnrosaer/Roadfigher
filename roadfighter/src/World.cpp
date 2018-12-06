@@ -12,14 +12,14 @@ const shared_ptr<roadfighter::Entity> &roadfighter::World::getPlayer() const {
     return player;
 }
 
-const pair<float, float> &roadfighter::World::GetLocation() const {
-    throw "No getlocation in world";
-}
-
 void roadfighter::World::setPlayer(const shared_ptr<roadfighter::Entity> &player) {
     World::player = player;
 }
 
 void roadfighter::World::draw() {
-    throw "no draw in wordl";
+    player->draw();
+
+    for(auto &entity : entities){
+        entity->draw();
+    }
 }

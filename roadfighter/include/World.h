@@ -25,8 +25,6 @@ namespace roadfighter {
         void setPlayer(const shared_ptr<Entity> &player);
 
         // functions
-        const pair<float, float> &GetLocation() const override;
-
         void draw() override;
 
     };

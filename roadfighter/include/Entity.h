@@ -21,7 +21,6 @@ namespace roadfighter {
         Entity();
 
         // getters and setters
-        virtual const pair<float, float> & GetLocation() const = 0;
         virtual void draw() = 0;
 
 

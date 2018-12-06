@@ -6,6 +6,3 @@
 
 roadfighter::RacingCar::RacingCar() {}
 
-const pair<float, float> &roadfighter::RacingCar::GetLocation() const {
-    return this->loc;
-}

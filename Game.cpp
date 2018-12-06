@@ -43,9 +43,7 @@ void Game::run() {
         window->clear();
 
         // all actions come here
-        world->getPlayer()->draw();
-        // todo: wat is het nut van world als subklasse van entity
-
+        world->draw();
 
         window->display();
 
