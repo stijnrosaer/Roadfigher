@@ -39,4 +39,5 @@ add_executable(RoadFighter ${SRC})
 # Link target to SFML libs
 # (The SFML_LIBRARIES variable is defined by FindSFML.cmake, if SFML was found)
 TARGET_LINK_LIBRARIES(RoadFighter ${SFML_LIBRARIES})
-TARGET_LINK_LIBRARIES(RoadFighter Roadfighter)
+TARGET_LINK_LIBRARIES(RoadFighter rf)
+ADD_DEPENDENCIES(RoadFighter rf)
