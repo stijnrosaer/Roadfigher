@@ -7,8 +7,8 @@
 
 
 #include "roadfighterSFML/include/PlayerCarSFML.h"
-#include "World.h"
-#include "Factory.h"
+#include "rf/World.h"
+#include "rf/Factory.h"
 
 class Game {
 private:

@@ -24,7 +24,7 @@ before_install:
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then wget http://www.sfml-dev.org/files/SFML-2.4.2-linux-gcc-64-bit.tar.gz; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then tar xf SFML-2.4.2-linux-gcc-64-bit.tar.gz; fi
 - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo cp -r SFML-2.4.2/lib/* /usr/local/lib/.; fi
-- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo cp -r SFML-2.4.2/include/* /usr/local/include/.; fi
+- if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo cp -r SFML-2.4.2/rf/* /usr/local/rf/.; fi
 
 - mkdir cmake-dist
 - travis_retry wget -qO- https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.tar.gz | sudo tar --strip-components=1 -C cmake-dist -xz 

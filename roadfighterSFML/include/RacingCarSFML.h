@@ -5,7 +5,7 @@
 #ifndef PROJECTGP_RACINGCARSFML_H
 #define PROJECTGP_RACINGCARSFML_H
 
-#include "RacingCar.h"
+#include "rf/RacingCar.h"
 #include "SFML/Graphics.hpp"
 
 namespace roadfighterSFML {

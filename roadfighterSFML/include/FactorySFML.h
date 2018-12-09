@@ -5,7 +5,7 @@
 #ifndef PROJECTGP_FACTORY_SFML_H
 #define PROJECTGP_FACTORY_SFML_H
 
-#include "Factory.h"
+#include "rf/Factory.h"
 
 namespace roadfighterSFML {
     class Factory : public roadfighter::Factory{

@@ -23,14 +23,14 @@ set(SRC main.cpp
         roadfighterSFML/src/PlayerCarSFML.cpp roadfighterSFML/include/PlayerCarSFML.h
         roadfighterSFML/src/RacingCarSFML.cpp roadfighterSFML/include/RacingCarSFML.h
         roadfighterSFML/src/PassingCarSFML.cpp roadfighterSFML/include/PassingCarSFML.h
-        roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighter/src/Factory.cpp roadfighter/include/Factory.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h)
+        roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h)
 
-# Add include dirs for SFML
-# (The SFML_INCLUDE_DIR variable is defined by FindSFML.cmake, if SFML was found)
+# Add rf dirs for SFML
+# (The SFML_INCLUDE_DIR variable is defined by FindcSFML.cmake, if SFML was found)
 INCLUDE_DIRECTORIES(${SFML_INCLUDE_DIR})
 
-set(lib roadfighter/include)
-add_subdirectory(roadfighter/include)
+set(lib roadfighter)
+add_subdirectory(roadfighter)
 INCLUDE_DIRECTORIES(${lib})
 
 # The program we're compiling with the sources set above

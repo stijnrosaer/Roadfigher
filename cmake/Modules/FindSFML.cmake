@@ -75,7 +75,7 @@ set(FIND_SFML_PATHS
         ../../
     /opt)
 
-# find the SFML include directory
+# find the SFML rf directory
 find_path(SFML_INCLUDE_DIR SFML/Config.hpp
           PATH_SUFFIXES include
           PATHS ${FIND_SFML_PATHS})
@@ -351,7 +351,7 @@ elseif(SFML_STATIC_LIBRARIES AND FIND_SFML_DEPENDENCIES_NOTFOUND)
     set(FIND_SFML_ERROR "SFML found but some of its dependencies are missing (${FIND_SFML_DEPENDENCIES_NOTFOUND})")
     set(SFML_FOUND FALSE)
 elseif(NOT SFML_FOUND)
-    # include directory or library not found
+    # rf directory or library not found
     set(FIND_SFML_ERROR "Could NOT find SFML (missing: ${FIND_SFML_MISSING})")
 endif()
 if (NOT SFML_FOUND)

@@ -2,6 +2,6 @@
 // Created by stijn on 16/11/18.
 //
 
-#include "../include/PassingCar.h"
+#include "../rf/PassingCar.h"
 
 roadfighter::PassingCar::PassingCar() {}

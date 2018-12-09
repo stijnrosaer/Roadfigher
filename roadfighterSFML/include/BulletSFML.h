@@ -6,7 +6,7 @@
 #define PROJECTGP_BULLETSFML_H
 
 #include <SFML/Graphics.hpp>
-#include "Bullet.h"
+#include "rf/Bullet.h"
 
 namespace roadfighterSFML {
     class Bullet : public roadfighter::Bullet {
