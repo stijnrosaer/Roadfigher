@@ -20,6 +20,7 @@ namespace roadfighter {
 
         // functions
         void draw() override = 0;
+        void update() override = 0;
 
     };
 }

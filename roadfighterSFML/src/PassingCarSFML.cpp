@@ -17,3 +17,7 @@ void roadfighterSFML::PassingCar::draw() {
     sprite.setPosition(pixloc.first, pixloc.second);
     window->draw(sprite);
 }
+
+void roadfighterSFML::PassingCar::update() {
+    PassingCar::update();
+}

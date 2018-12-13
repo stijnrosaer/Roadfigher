@@ -20,6 +20,7 @@ namespace roadfighterSFML {
     public:
         PlayerCar(shared_ptr<sf::RenderWindow> window);
         void draw() override;
+        void update() override;
 
 
     };

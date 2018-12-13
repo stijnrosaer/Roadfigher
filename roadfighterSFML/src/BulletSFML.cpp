@@ -18,3 +18,7 @@ void roadfighterSFML::Bullet::draw() {
     sprite.setPosition(pixloc.first, pixloc.second);
     window->draw(sprite);
 }
+
+void roadfighterSFML::Bullet::update() {
+    Bullet::update();
+}

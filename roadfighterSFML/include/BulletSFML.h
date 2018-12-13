@@ -20,6 +20,7 @@ namespace roadfighterSFML {
     public:
         Bullet(shared_ptr<sf::RenderWindow> window);
         void draw() override;
+        void update() override;
 
 
     };

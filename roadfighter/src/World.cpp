@@ -23,3 +23,11 @@ void roadfighter::World::draw() {
         entity->draw();
     }
 }
+
+void roadfighter::World::update() {
+    player->update();
+
+    for(auto &entity : entities){
+        entity->draw();
+    }
+}

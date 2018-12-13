@@ -21,3 +21,7 @@ void roadfighterSFML::PlayerCar::draw() {
     sprite.setPosition(pixloc.first, pixloc.second);
     window->draw(sprite);
 }
+
+void roadfighterSFML::PlayerCar::update() {
+    PlayerCar::update();
+}
