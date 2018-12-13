@@ -8,7 +8,7 @@
 #include <memory>
 #include <iostream>
 
-/// information at: https://r3dux.org/2011/07/how-to-convert-any-class-to-a-singleton-with-a-template-wrapper-in-c/
+/// information at: https://stackoverflow.com/questions/41328038/singleton-template-as-base-class-in-c
 
 template <typename T>
 class Singleton {
