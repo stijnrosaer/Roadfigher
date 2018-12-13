@@ -7,9 +7,8 @@
 
 roadfighterSFML::PassingCar::PassingCar(shared_ptr<sf::RenderWindow> window) {
     this->window = std::move(window);
-    this->texture.loadFromFile("../img/passing_car.png");
+    //this->texture.loadFromFile();
     sprite.setTexture(texture);
-    sprite.setScale(2.0f,2.0f);
 
 }
 
