@@ -12,12 +12,11 @@ Game::Game() {
     fac = make_shared<roadfighterSFML::Factory>(window);
 
     world->setPlayer(fac->createPlayerCar());
-
-    cout << "";
-
 }
 
 void Game::run() {
+    Background background(window);
+
     auto startTime = chrono::high_resolution_clock::now();
     auto stopTime = chrono::high_resolution_clock::now();
 
@@ -26,14 +25,6 @@ void Game::run() {
 
     while (window->isOpen()) {
         startTime = chrono::high_resolution_clock::now();
-        stopTime = chrono::high_resolution_clock::now();
-        chrono::duration<double> elapsed = stopTime - startTime;
-
-
-        while (elapsed.count() < tpf){
-            stopTime = chrono::high_resolution_clock::now();
-            elapsed = stopTime - startTime;
-        }
 
         sf::Event event{};
         while (window->pollEvent(event)) {
@@ -43,10 +34,19 @@ void Game::run() {
         window->clear();
 
         // all actions come here
+        background.update(window, 2.0);
+        background.draw(window);
         world->draw();
 
         window->display();
 
+        stopTime = chrono::high_resolution_clock::now();
+        chrono::duration<double> elapsed = stopTime - startTime;
+
+        while (elapsed.count() < tpf){
+            stopTime = chrono::high_resolution_clock::now();
+            elapsed = stopTime - startTime;
+        }
     }
 }
 

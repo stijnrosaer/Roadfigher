@@ -9,6 +9,7 @@
 #include "roadfighterSFML/include/PlayerCarSFML.h"
 #include "rf/World.h"
 #include "rf/Factory.h"
+#include "Background.h"
 
 class Game {
 private:
