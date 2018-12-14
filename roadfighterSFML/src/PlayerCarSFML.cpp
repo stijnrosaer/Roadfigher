@@ -21,19 +21,19 @@ void roadfighterSFML::PlayerCar::draw() {
     window->draw(sprite);
 }
 
-void roadfighterSFML::PlayerCar::update() {
+void roadfighterSFML::PlayerCar::update(int speed) {
     bool speedKeyPressed = false;
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-        speed += 5;
-        if (speed > 400){
-            speed = 400;
+        this->speed += 5;
+        if (this->speed > 400){
+            this->speed = 400;
         }
         speedKeyPressed = true;
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-        speed -= 10;
-        if (speed < 0){
-            speed = 0;
+        this->speed -= 10;
+        if (this->speed < 0){
+            this->speed = 0;
         }
         speedKeyPressed = true;
     }
@@ -50,9 +50,9 @@ void roadfighterSFML::PlayerCar::update() {
 
     }
     if (!speedKeyPressed){
-        speed -= 3;
-        if (speed < 0){
-            speed = 0;
+        this->speed -= 3;
+        if (this->speed < 0){
+            this->speed = 0;
         }
     }
 }

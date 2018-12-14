@@ -17,6 +17,6 @@ void roadfighterSFML::RacingCar::draw() {
     window->draw(sprite);
 }
 
-void roadfighterSFML::RacingCar::update() {
-    RacingCar::update();
+void roadfighterSFML::RacingCar::update(int speed) {
+//    RacingCar::update();
 }

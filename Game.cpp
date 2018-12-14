@@ -4,8 +4,10 @@
 
 #include "Game.h"
 #include "roadfighterSFML/include/FactorySFML.h"
+#include "Random.h"
 #include <chrono>
 #include <sstream>
+#include <fstream>
 
 Game::Game() {
     window = make_shared<sf::RenderWindow>(sf::VideoMode(600, 450), "Roadfighter");
@@ -15,9 +17,15 @@ Game::Game() {
     world->setPlayer(fac->createPlayerCar());
 
     distance = 0;
+    prevLoadDist = 200;
 }
 
 void Game::run() {
+    pair<float, float> pos = {-2, 8};
+    pos = Transformation::getInstance()->transformTo2DWorldSpace(pos, 600, 450);
+    pos = Transformation::getInstance()->transformToPixelSpace(pos, 600, 450);
+    cout << pos.second << endl;
+
     Background background(window);
 
     auto startTime = chrono::high_resolution_clock::now();
@@ -38,8 +46,15 @@ void Game::run() {
 
         // all actions come here
         //update world
-        world->update();
+        world->update(0);
         distance += world->getSpeed()/100;
+
+        if(distance > 200 && abs(prevLoadDist - distance) > 40){
+            if(Random::getInstance()->random(0, 200) < 5){
+                world->addEntity(fac->createPassingCar());
+                prevLoadDist = distance;
+            }
+        }
 
         //update background
         background.update(window, static_cast<float>((15.0 * world->getSpeed()) / 400));

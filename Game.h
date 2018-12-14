@@ -18,6 +18,7 @@ private:
     shared_ptr<roadfighter::World> world;
 
     int distance;
+    int prevLoadDist;
 
 public:
     Game();

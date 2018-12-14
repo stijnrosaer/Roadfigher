@@ -20,7 +20,7 @@ namespace roadfighter {
 
         // functions
         void draw() override = 0;
-        void update() override = 0;
+        void update(int speed) override = 0;
 
         int getSpeed() override;
 

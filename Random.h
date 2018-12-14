@@ -6,12 +6,14 @@
 #define PROJECTGP_RANDOM_H
 
 
-class Random {
-private:
+#include "Singleton.h"
 
+class Random : public Singleton<Random> {
+private:
+    Random();;
 
 public:
-
+    int random(int begin = 0, int end = 100);
 };
 
 

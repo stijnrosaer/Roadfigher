@@ -27,7 +27,7 @@ namespace roadfighter {
 
         // functions
         void draw() override = 0;
-        void update() override = 0;
+        void update(int speed) override = 0;
 
         // getters and setters
         void setLoc(const pair<float, float> &loc);

@@ -25,10 +25,11 @@ namespace roadfighter {
 
 
         void setPlayer(const shared_ptr<Entity> &player);
+        void addEntity(const shared_ptr<Entity> &object);
 
         // functions
         void draw() override;
-        void update() override;
+        void update(int speed) override;
 
         int getSpeed() override;
 

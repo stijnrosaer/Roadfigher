@@ -19,6 +19,6 @@ void roadfighterSFML::Bullet::draw() {
     window->draw(sprite);
 }
 
-void roadfighterSFML::Bullet::update() {
-    Bullet::update();
+void roadfighterSFML::Bullet::update(int speed) {
+   // Bullet::update();
 }

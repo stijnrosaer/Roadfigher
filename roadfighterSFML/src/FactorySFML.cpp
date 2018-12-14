@@ -6,6 +6,7 @@
 
 #include "../include/FactorySFML.h"
 #include "../include/PlayerCarSFML.h"
+#include "../include/PassingCarSFML.h"
 
 roadfighterSFML::Factory::~Factory() {
 
@@ -16,7 +17,7 @@ shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPlayerCar() {
 }
 
 shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPassingCar() {
-    //return shared_ptr<roadfighter::Entity>(this->window);
+    return make_shared<roadfighterSFML::PassingCar>(this->window);
 }
 
 roadfighterSFML::Factory::Factory(shared_ptr<sf::RenderWindow> w) {

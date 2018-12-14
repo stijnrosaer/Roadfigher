@@ -24,14 +24,18 @@ void roadfighter::World::draw() {
     }
 }
 
-void roadfighter::World::update() {
-    player->update();
+void roadfighter::World::update(int speed) {
+    player->update(0);
     this->speed = player->getSpeed();
     for(auto &entity : entities){
-        entity->draw();
+        entity->update(this->speed);
     }
 }
 
 int roadfighter::World::getSpeed() {
     return this->speed;
+}
+
+void roadfighter::World::addEntity(const shared_ptr<roadfighter::Entity> &object) {
+    entities.push_back(object);
 }
