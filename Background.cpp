@@ -8,46 +8,30 @@
 Background::Background(std::shared_ptr<sf::RenderWindow> window) {
     bgTexture1.loadFromFile("../img/background.png");
     bgTexture1.setRepeated(true);
-    bgTexture2.loadFromFile("../img/background.png");
-    bgTexture2.setRepeated(true);
 
     bgSprite1.setTexture(bgTexture1);
-    bgSprite2.setTexture(bgTexture2);
-
     bgSprite1.scale(window->getView().getSize().x / bgTexture1.getSize().x, window->getView().getSize().y / bgTexture1.getSize().y);
-    bgSprite2.scale(window->getView().getSize().x / bgTexture2.getSize().x, window->getView().getSize().y / bgTexture2.getSize().y);
-
-    bgSprite2.setPosition(0, -window->getView().getSize().y);
+    bgSprite1.setPosition(0,0);
 
     bgY = bgSprite1.getPosition().y;
-    bgY2 = bgSprite2.getPosition().y;
 
+    bgSprite1.setTextureRect(sf::IntRect(0, static_cast<int>(bgY), static_cast<int>(window->getView().getSize().x),
+                                         static_cast<int>(window->getView().getSize().y)));
 }
 
 void Background::update(std::shared_ptr<sf::RenderWindow> window, float move) {
     if (bgY < window->getView().getSize().y){
-        bgY += move;
+        bgY -= move;
     } else{
-        bgY = window->getView().getSize().y;
-        bgY *= -1;
-    }
-    if (bgY2 < window->getView().getSize().y){
-        bgY2 += move;
-    } else{
-        bgY2 = window->getView().getSize().y;
-        bgY2 *= -1;
+        bgY = 0;
     }
 
-
-    bgSprite1.setPosition(0, bgY);
-    bgSprite2.setPosition(0, bgY2);
-
+    bgSprite1.setTextureRect(sf::IntRect(0, static_cast<int>(bgY), static_cast<int>(window->getView().getSize().x),
+                                         static_cast<int>(window->getView().getSize().y)));
 }
 
 void Background::draw(std::shared_ptr<sf::RenderWindow> window) {
-    window->draw(bgSprite2);
     window->draw(bgSprite1);
-
 }
 
 Background::Background() {}
