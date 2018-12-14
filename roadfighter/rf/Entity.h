@@ -23,6 +23,7 @@ namespace roadfighter {
         // getters and setters
         virtual void draw() = 0;
         virtual void update() = 0;
+        virtual int getSpeed() = 0;
 
 
     };

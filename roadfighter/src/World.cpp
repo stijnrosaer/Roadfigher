@@ -26,8 +26,12 @@ void roadfighter::World::draw() {
 
 void roadfighter::World::update() {
     player->update();
-
+    this->speed = player->getSpeed();
     for(auto &entity : entities){
         entity->draw();
     }
+}
+
+int roadfighter::World::getSpeed() {
+    return this->speed;
 }

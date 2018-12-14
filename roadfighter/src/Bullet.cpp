@@ -5,3 +5,7 @@
 #include "../rf/Bullet.h"
 
 roadfighter::Bullet::Bullet() {}
+
+int roadfighter::Bullet::getSpeed() {
+    return this->speed;
+}

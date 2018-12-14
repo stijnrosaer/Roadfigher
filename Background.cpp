@@ -14,8 +14,8 @@ Background::Background(std::shared_ptr<sf::RenderWindow> window) {
     bgSprite1.setTexture(bgTexture1);
     bgSprite2.setTexture(bgTexture2);
 
-    bgSprite1.scale(float(window->getView().getSize().x)/bgTexture1.getSize().x, float(window->getView().getSize().y)/bgTexture1.getSize().y);
-    bgSprite2.scale(float(window->getView().getSize().x)/bgTexture2.getSize().x, float(window->getView().getSize().y)/bgTexture2.getSize().y);
+    bgSprite1.scale(window->getView().getSize().x / bgTexture1.getSize().x, window->getView().getSize().y / bgTexture1.getSize().y);
+    bgSprite2.scale(window->getView().getSize().x / bgTexture2.getSize().x, window->getView().getSize().y / bgTexture2.getSize().y);
 
     bgSprite2.setPosition(0, -window->getView().getSize().y);
 
@@ -45,8 +45,8 @@ void Background::update(std::shared_ptr<sf::RenderWindow> window, float move) {
 }
 
 void Background::draw(std::shared_ptr<sf::RenderWindow> window) {
-    window->draw(bgSprite1);
     window->draw(bgSprite2);
+    window->draw(bgSprite1);
 
 }
 

@@ -5,13 +5,16 @@
 #include "Game.h"
 #include "roadfighterSFML/include/FactorySFML.h"
 #include <chrono>
+#include <sstream>
 
 Game::Game() {
-    window = make_shared<sf::RenderWindow>(sf::VideoMode(400, 300), "Roadfighter");
+    window = make_shared<sf::RenderWindow>(sf::VideoMode(600, 450), "Roadfighter");
     this->world = make_shared<roadfighter::World>();
     fac = make_shared<roadfighterSFML::Factory>(window);
 
     world->setPlayer(fac->createPlayerCar());
+
+    distance = 0;
 }
 
 void Game::run() {
@@ -31,17 +34,38 @@ void Game::run() {
             if (event.type == sf::Event::Closed)
                 window->close();
         }
-        window->clear();
+        window->clear(sf::Color(200,0,0));
 
         // all actions come here
-        background.update(window, 2.0);
+        //update world
+        world->update();
+        distance += world->getSpeed()/100;
+
+        //update background
+        background.update(window, static_cast<float>((15.0 * world->getSpeed()) / 400));
+
+        //draw background
         background.draw(window);
+
+        //draw world
         world->draw();
+
+        //draw extra display elements
+        sf::Font font;
+        font.loadFromFile("../font/Arial.ttf");
+
+        sf::Text dist;
+        dist.setFont(font);
+        dist.setString("distance: " + to_string(distance));
+        dist.setCharacterSize(20);
+        dist.setFillColor(sf::Color::White);
+        dist.setPosition(430, 350);
+        window->draw(dist);
 
         window->display();
 
         stopTime = chrono::high_resolution_clock::now();
-        chrono::duration<double> elapsed = stopTime - startTime;
+        chrono::duration<double> elapsed = startTime - stopTime;
 
         while (elapsed.count() < tpf){
             stopTime = chrono::high_resolution_clock::now();

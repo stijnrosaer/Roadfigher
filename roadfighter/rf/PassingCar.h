@@ -10,6 +10,7 @@
 namespace roadfighter {
     class PassingCar : public roadfighter::Entity {
     protected:
+        int speed;
         pair<float, float> loc;
 
     public:
@@ -20,6 +21,8 @@ namespace roadfighter {
         // functions
         void draw() override = 0;
         void update() override = 0;
+
+        int getSpeed() override;
 
     };
 }
