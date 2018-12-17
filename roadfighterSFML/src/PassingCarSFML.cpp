@@ -3,7 +3,6 @@
 //
 
 #include "../include/PassingCarSFML.h"
-#include <utility>
 
 roadfighterSFML::PassingCar::PassingCar(shared_ptr<sf::RenderWindow> window) {
     this->window = std::move(window);
@@ -20,6 +19,18 @@ void roadfighterSFML::PassingCar::draw() {
 }
 
 void roadfighterSFML::PassingCar::update(int speed) {
-    float relativespeed = this->speed - speed;
-    loc = Transformation::getInstance()->transformToPixelSpace({pixloc.first, pixloc.second - (15*relativespeed)/400}, window->getView().getSize().x, window->getView().getSize().y);
+    updateSpeed(speed);
+    loc = Transformation::getInstance()->transformToPixelSpace({pixloc.first, pixloc.second - (15*this->relativeSpeed)/400}, window->getView().getSize().x, window->getView().getSize().y);
+
+    if (loc.second < -3){
+        cout << "";
+//        shared_from_this().reset();
+        cout << shared_from_this().use_count() << endl;
+        cout << "";
+
+    }
 }
+
+roadfighterSFML::PassingCar::~PassingCar(){
+
+};

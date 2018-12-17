@@ -18,7 +18,8 @@ namespace roadfighter {
         pair<float, float> tlLoc;
         pair<float, float> brLoc;
 
-        int speed;
+        float speed;
+        float relativeSpeed;
 
     public:
         // constructor
@@ -32,7 +33,7 @@ namespace roadfighter {
         // getters and setters
         void setLoc(const pair<float, float> &loc);
 
-        int getSpeed() override;
+        float getSpeed() override;
 
     };
 }

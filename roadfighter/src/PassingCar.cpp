@@ -40,6 +40,14 @@ roadfighter::PassingCar::PassingCar() {
     this->speed = 100;
 }
 
-int roadfighter::PassingCar::getSpeed() {
+float roadfighter::PassingCar::getSpeed() {
     return this->speed;
 }
+
+roadfighter::PassingCar::~PassingCar(){
+}
+
+void roadfighter::PassingCar::updateSpeed(int speed) {
+    this->relativeSpeed = this->speed - speed;
+
+};

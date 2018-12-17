@@ -10,8 +10,10 @@
 namespace roadfighter {
     class Bullet : public Entity {
     protected:
-        int speed;
         pair<float, float> loc;
+
+        float speed;
+        float relativeSpeed;
 
     public:
         // constructor
@@ -22,7 +24,7 @@ namespace roadfighter {
         void draw() override = 0;
         void update(int speed) override = 0;
 
-        int getSpeed() override;
+        float getSpeed() override;
 
     };
 }

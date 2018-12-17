@@ -5,6 +5,8 @@
 #include "../rf/Entity.h"
 
 
-roadfighter::Entity::Entity() {
-}
+roadfighter::Entity::Entity() = default;
+
+roadfighter::Entity::~Entity(){
+};
 

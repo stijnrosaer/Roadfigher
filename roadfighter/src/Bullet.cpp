@@ -6,6 +6,6 @@
 
 roadfighter::Bullet::Bullet() {}
 
-int roadfighter::Bullet::getSpeed() {
+float roadfighter::Bullet::getSpeed() {
     return this->speed;
 }

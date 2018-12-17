@@ -32,7 +32,7 @@ void roadfighter::World::update(int speed) {
     }
 }
 
-int roadfighter::World::getSpeed() {
+float roadfighter::World::getSpeed() {
     return this->speed;
 }
 

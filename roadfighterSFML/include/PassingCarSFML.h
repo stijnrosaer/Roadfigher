@@ -19,6 +19,9 @@ namespace roadfighterSFML {
 
     public:
         PassingCar(shared_ptr<sf::RenderWindow> window);
+
+        virtual ~PassingCar();
+
         void draw() override;
         void update(int speed) override;
 

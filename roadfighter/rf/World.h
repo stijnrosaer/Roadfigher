@@ -11,7 +11,7 @@
 namespace roadfighter {
     class World : public roadfighter::Entity {
     private:
-        int speed;
+        float speed;
 
         shared_ptr<roadfighter::Entity> player;
         vector<shared_ptr<roadfighter::Entity>> entities;
@@ -31,7 +31,7 @@ namespace roadfighter {
         void draw() override;
         void update(int speed) override;
 
-        int getSpeed() override;
+        float getSpeed() override;
 
     };
 }

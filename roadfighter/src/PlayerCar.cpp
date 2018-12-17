@@ -22,6 +22,6 @@ void roadfighter::PlayerCar::setLoc(const pair<float, float> &loc) {
     this->brLoc = {loc.first+(width/2), loc.second-(height/2)};
 }
 
-int roadfighter::PlayerCar::getSpeed() {
+float roadfighter::PlayerCar::getSpeed() {
     return this->speed;
 }

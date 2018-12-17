@@ -47,10 +47,10 @@ void Game::run() {
         // all actions come here
         //update world
         world->update(0);
-        distance += world->getSpeed()/100;
+        distance += static_cast<float>(world->getSpeed())/100;
 
-        if(distance > 200 && abs(prevLoadDist - distance) > 40){
-            if(Random::getInstance()->random(0, 200) < 5){
+        if(distance > 100 && abs(prevLoadDist - distance) > 40){
+            if(Random::getInstance()->random(1, 200) < 10){
                 world->addEntity(fac->createPassingCar());
                 prevLoadDist = distance;
             }
@@ -71,7 +71,7 @@ void Game::run() {
 
         sf::Text dist;
         dist.setFont(font);
-        dist.setString("distance: " + to_string(distance));
+        dist.setString("distance: " + to_string(static_cast<int>(distance)));
         dist.setCharacterSize(20);
         dist.setFillColor(sf::Color::White);
         dist.setPosition(430, 350);

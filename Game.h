@@ -17,8 +17,8 @@ private:
     shared_ptr<sf::RenderWindow> window;
     shared_ptr<roadfighter::World> world;
 
-    int distance;
-    int prevLoadDist;
+    float distance;
+    float prevLoadDist;
 
 public:
     Game();

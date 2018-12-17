@@ -12,18 +12,19 @@
 
 using namespace std;
 
-namespace roadfighter {
-    class Entity {
+namespace roadfighter  {
+    class Entity : public enable_shared_from_this<Entity> {
     private:
 
     public:
         // constructor
         Entity();
+        virtual ~Entity();
 
         // getters and setters
         virtual void draw() = 0;
         virtual void update(int speed) = 0;
-        virtual int getSpeed() = 0;
+        virtual float getSpeed() = 0;
 
 
     };

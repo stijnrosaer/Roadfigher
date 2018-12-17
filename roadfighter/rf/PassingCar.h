@@ -17,18 +17,23 @@ namespace roadfighter {
         pair<float, float> tlLoc;
         pair<float, float> brLoc;
 
-        int speed;
+        float speed;
+        float relativeSpeed;
 
     public:
         // constructor
         PassingCar();
+
+        virtual ~PassingCar();
 
 
         // functions
         void draw() override = 0;
         void update(int speed) override = 0;
 
-        int getSpeed() override;
+        float getSpeed() override;
+
+        void updateSpeed(int speed);
 
     };
 }
