@@ -18,15 +18,13 @@ void roadfighterSFML::PassingCar::draw() {
     window->draw(sprite);
 }
 
-void roadfighterSFML::PassingCar::update(int speed) {
-    updateSpeed(speed);
+void roadfighterSFML::PassingCar::update(float speed, vector<shared_ptr<Entity>> entities) {
+    roadfighter::PassingCar::update(speed, entities);
     loc = Transformation::getInstance()->transformToPixelSpace({pixloc.first, pixloc.second - (15*this->relativeSpeed)/400}, window->getView().getSize().x, window->getView().getSize().y);
 
     if (loc.second < -3){
         cout << "";
 //        shared_from_this().reset();
-        cout << shared_from_this().use_count() << endl;
-        cout << "";
 
     }
 }

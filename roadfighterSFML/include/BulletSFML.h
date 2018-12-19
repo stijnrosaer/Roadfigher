@@ -20,7 +20,7 @@ namespace roadfighterSFML {
     public:
         Bullet(shared_ptr<sf::RenderWindow> window);
         void draw() override;
-        void update(int speed) override;
+        void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
 
     };

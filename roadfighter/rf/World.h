@@ -29,9 +29,11 @@ namespace roadfighter {
 
         // functions
         void draw() override;
-        void update(int speed) override;
+        void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
         float getSpeed() override;
+
+        bool toDelete() override;
 
     };
 }

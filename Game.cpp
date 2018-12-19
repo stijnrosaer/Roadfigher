@@ -6,8 +6,6 @@
 #include "roadfighterSFML/include/FactorySFML.h"
 #include "Random.h"
 #include <chrono>
-#include <sstream>
-#include <fstream>
 
 Game::Game() {
     window = make_shared<sf::RenderWindow>(sf::VideoMode(600, 450), "Roadfighter");
@@ -28,14 +26,11 @@ void Game::run() {
 
     Background background(window);
 
-    auto startTime = chrono::high_resolution_clock::now();
-    auto stopTime = chrono::high_resolution_clock::now();
-
     double fps = 30;
     double tpf = 1/fps;
 
     while (window->isOpen()) {
-        startTime = chrono::high_resolution_clock::now();
+        auto startTime = chrono::high_resolution_clock::now();
 
         sf::Event event{};
         while (window->pollEvent(event)) {
@@ -46,11 +41,13 @@ void Game::run() {
 
         // all actions come here
         //update world
-        world->update(0);
+        world->update(0, {});
         distance += static_cast<float>(world->getSpeed())/100;
 
         if(distance > 100 && abs(prevLoadDist - distance) > 40){
-            if(Random::getInstance()->random(1, 200) < 10){
+            float chance =((100+ distance/50) * (world->getSpeed()/400))/10;
+            cout << chance << endl;
+            if(Random::getInstance()->random(1, 200) < chance){
                 world->addEntity(fac->createPassingCar());
                 prevLoadDist = distance;
             }
@@ -79,8 +76,8 @@ void Game::run() {
 
         window->display();
 
-        stopTime = chrono::high_resolution_clock::now();
-        chrono::duration<double> elapsed = startTime - stopTime;
+        auto stopTime = chrono::high_resolution_clock::now();
+        chrono::duration<double> elapsed = stopTime - startTime;
 
         while (elapsed.count() < tpf){
             stopTime = chrono::high_resolution_clock::now();

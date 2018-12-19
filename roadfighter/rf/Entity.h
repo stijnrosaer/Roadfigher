@@ -13,7 +13,7 @@
 using namespace std;
 
 namespace roadfighter  {
-    class Entity : public enable_shared_from_this<Entity> {
+    class Entity {
     private:
 
     public:
@@ -23,8 +23,9 @@ namespace roadfighter  {
 
         // getters and setters
         virtual void draw() = 0;
-        virtual void update(int speed) = 0;
+        virtual void update(float speed, vector<shared_ptr<Entity>> entities) = 0;
         virtual float getSpeed() = 0;
+        virtual bool toDelete() = 0;
 
 
     };

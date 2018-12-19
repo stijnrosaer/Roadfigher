@@ -16,12 +16,12 @@ roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window) {
 
 
 void roadfighterSFML::PlayerCar::draw() {
-    pixloc = Transformation::getInstance()->transformTo2DWorldSpace(tlLoc, this->window->getView().getSize().x, this->window->getView().getSize().y);
+    pixloc = Transformation::getInstance()->transformTo2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x, this->window->getView().getSize().y);
     sprite.setPosition(pixloc.first, pixloc.second);
     window->draw(sprite);
 }
 
-void roadfighterSFML::PlayerCar::update(int speed) {
+void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> entities) {
     bool speedKeyPressed = false;
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
@@ -39,19 +39,19 @@ void roadfighterSFML::PlayerCar::update(int speed) {
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        if (loc.first > -1.3) {
-            this->setLoc({loc.first - 0.07, loc.second});
+        if (bounds.loc.first > -1.3) {
+            this->setLoc({bounds.loc.first - 0.07, bounds.loc.second});
         }
 
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-        if (loc.first < 1.1) {
-            this->setLoc({loc.first + 0.07, loc.second});
+        if (bounds.loc.first < 1.1) {
+            this->setLoc({bounds.loc.first + 0.07, bounds.loc.second});
         }
 
     }
-    if (!speedKeyPressed){
+    if (!speedKeyPressed) {
         this->speed -= 3;
-        if (this->speed < 0){
+        if (this->speed < 0) {
             this->speed = 0;
         }
     }

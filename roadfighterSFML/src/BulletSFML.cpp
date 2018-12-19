@@ -19,6 +19,6 @@ void roadfighterSFML::Bullet::draw() {
     window->draw(sprite);
 }
 
-void roadfighterSFML::Bullet::update(int speed) {
+void roadfighterSFML::Bullet::update(float speed, vector<shared_ptr<Entity>> entities) {
    // Bullet::update();
 }

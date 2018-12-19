@@ -8,7 +8,6 @@
 roadfighter::PassingCar::PassingCar() {
     int l = Random::getInstance()->random(0,4);
     float xloc;
-    cout << l << endl;
     switch (l){
         case 0:
             xloc = -1;
@@ -47,7 +46,11 @@ float roadfighter::PassingCar::getSpeed() {
 roadfighter::PassingCar::~PassingCar(){
 }
 
-void roadfighter::PassingCar::updateSpeed(int speed) {
+void roadfighter::PassingCar::update(float speed, vector<shared_ptr<Entity>> entities) {
     this->relativeSpeed = this->speed - speed;
+    // todo: location hier aanpassen met relative speed
+}
 
-};
+bool roadfighter::PassingCar::toDelete() {
+    return loc.second < -3;
+}

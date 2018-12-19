@@ -23,7 +23,7 @@ namespace roadfighterSFML {
         virtual ~PassingCar();
 
         void draw() override;
-        void update(int speed) override;
+        void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
 
     };

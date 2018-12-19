@@ -6,3 +6,11 @@
 
 roadfighter::RacingCar::RacingCar() {}
 
+bool roadfighter::RacingCar::toDelete() {
+    return false;
+}
+
+float roadfighter::RacingCar::getSpeed() {
+    return 0;
+}
+
