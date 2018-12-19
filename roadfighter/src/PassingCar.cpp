@@ -29,12 +29,12 @@ roadfighter::PassingCar::PassingCar() {
             break;
     }
 
-    this->loc = {xloc, 3.5};
-    this->width = 0.3;
-    this->height = 0.4;
+    this->bounds.loc = {xloc, 3.5};
+    this->bounds.width = 0.3;
+    this->bounds.height = 0.4;
 
-    this->tlLoc = {loc.first-(width/2), loc.second+(height/2)};
-    this->brLoc = {loc.first+(width/2), loc.second-(height/2)};
+    this->bounds.tlLoc = {bounds.loc.first-(bounds.width/2), bounds.loc.second+(bounds.height/2)};
+    this->bounds.brLoc = {bounds.loc.first+(bounds.width/2), bounds.loc.second-(bounds.height/2)};
 
     this->speed = 100;
 }
@@ -52,5 +52,11 @@ void roadfighter::PassingCar::update(float speed, vector<shared_ptr<Entity>> ent
 }
 
 bool roadfighter::PassingCar::toDelete() {
-    return loc.second < -3;
+    return bounds.tlLoc.second < -3;
+}
+
+void roadfighter::PassingCar::setLoc(const pair<float, float> &loc) {
+    this->bounds.tlLoc = loc;
+    this->bounds.loc = {loc.first+(bounds.width/2), loc.second-(bounds.height/2)};
+    this->bounds.brLoc = {loc.first+bounds.width, loc.second-bounds.height};
 }

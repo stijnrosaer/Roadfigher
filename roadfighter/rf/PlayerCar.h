@@ -19,7 +19,6 @@ namespace roadfighter {
         };
     protected:
         boundaries bounds;
-        bool toRemove;
 
         float speed;
         float relativeSpeed;
@@ -35,7 +34,6 @@ namespace roadfighter {
 
         // getters and setters
         void setLoc(const pair<float, float> &loc);
-
         float getSpeed() override;
 
         bool toDelete() override;

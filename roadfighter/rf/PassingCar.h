@@ -17,12 +17,7 @@ namespace roadfighter {
             pair<float, float> brLoc;
         };
     protected:
-        pair<float, float> loc;
-        float width;
-        float height;
-
-        pair<float, float> tlLoc;
-        pair<float, float> brLoc;
+        boundaries bounds;
 
         float speed;
         float relativeSpeed;
@@ -38,6 +33,7 @@ namespace roadfighter {
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
+        void setLoc(const pair<float, float> &loc);
         float getSpeed() override;
         bool toDelete() override;
 
