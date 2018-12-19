@@ -10,16 +10,7 @@
 
 namespace roadfighter {
     class PlayerCar : public roadfighter::Entity {
-        struct boundaries{
-            pair<float, float> loc;
-            float width;
-            float height;
-            pair<float, float> tlLoc;
-            pair<float, float> brLoc;
-        };
     protected:
-        boundaries bounds;
-
         float speed;
         float relativeSpeed;
 

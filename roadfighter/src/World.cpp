@@ -27,6 +27,7 @@ void roadfighter::World::draw() {
 void roadfighter::World::update(float speed, vector<shared_ptr<Entity>> entities) {
     player->update(0, this->entities);
     this->speed = player->getSpeed();
+
     for(auto &entity : this->entities){
         entity->update(this->speed, this->entities);
     }

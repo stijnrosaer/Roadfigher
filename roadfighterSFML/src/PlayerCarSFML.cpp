@@ -55,4 +55,6 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
             this->speed = 0;
         }
     }
+
+    roadfighter::PlayerCar::update(speed, entities);
 }

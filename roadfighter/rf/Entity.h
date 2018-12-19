@@ -14,7 +14,15 @@ using namespace std;
 
 namespace roadfighter  {
     class Entity {
-    private:
+        struct boundaries{
+            pair<float, float> loc;
+            float width;
+            float height;
+            pair<float, float> tlLoc;
+            pair<float, float> brLoc;
+        };
+    protected:
+        boundaries bounds;
 
     public:
         // constructor
@@ -26,6 +34,10 @@ namespace roadfighter  {
         virtual void update(float speed, vector<shared_ptr<Entity>> entities) = 0;
         virtual float getSpeed() = 0;
         virtual bool toDelete() = 0;
+
+        boundaries getBounds();
+        bool collision(vector<shared_ptr<roadfighter::Entity>>);
+
 
 
     };
