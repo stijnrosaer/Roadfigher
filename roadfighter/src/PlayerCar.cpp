@@ -14,6 +14,7 @@ roadfighter::PlayerCar::PlayerCar() : roadfighter::Entity() {
     this->bounds.brLoc = {bounds.loc.first+(bounds.width/2), bounds.loc.second-(bounds.height/2)};
 
     this->speed = 0;
+    this->exploding = 0;
 }
 
 void roadfighter::PlayerCar::setLoc(const pair<float, float> &loc) {
@@ -32,7 +33,23 @@ bool roadfighter::PlayerCar::toDelete() {
 
 void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::Entity>> entities) {
     if (collision(entities)){
-        setLoc({0, this->bounds.loc.second});
+        exploding ++;
+    }
+
+    if (exploding < 50 && exploding > 0){
+        exploding ++;
+
+        if (this->speed > 0) {
+            this->speed -= 20;
+        }
+
+        return;
+    }
+    if (exploding == 50){
+        exploding = 0;
+
         this->speed = 0;
+        setLoc({0, this->bounds.loc.second});
+
     }
 }

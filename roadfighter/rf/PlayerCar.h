@@ -14,6 +14,8 @@ namespace roadfighter {
         float speed;
         float relativeSpeed;
 
+        int exploding;
+
     public:
         // constructor
         PlayerCar();

@@ -12,7 +12,8 @@ namespace roadfighterSFML {
     class PlayerCar : public roadfighter::PlayerCar {
     private:
         pair<float, float> pixloc;
-        sf::Texture texture;
+        vector<sf::Texture> textures;
+
         sf::Sprite sprite;
         shared_ptr<sf::RenderWindow> window;
 
