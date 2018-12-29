@@ -32,7 +32,8 @@ roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window) {
 
 
 void roadfighterSFML::PlayerCar::draw() {
-    pixloc = Transformation::getInstance()->transformTo2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x, this->window->getView().getSize().y);
+    pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x,
+                                                           this->window->getView().getSize().y);
     sprite.setPosition(pixloc.first, pixloc.second);
     window->draw(sprite);
 }

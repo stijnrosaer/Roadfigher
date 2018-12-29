@@ -7,6 +7,7 @@
 
 
 #include "Entity.h"
+#include <typeinfo>
 
 namespace roadfighter {
     class World : public roadfighter::Entity {
@@ -32,8 +33,11 @@ namespace roadfighter {
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
         float getSpeed() override;
-
         bool toDelete() override;
+        void setDelete(bool del) override;
+
+        void remCollisions();
+
 
     };
 }

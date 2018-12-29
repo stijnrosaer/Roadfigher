@@ -4,12 +4,18 @@
 
 #include "../rf/Bullet.h"
 
-roadfighter::Bullet::Bullet() {}
+roadfighter::Bullet::Bullet() {
+    del = false;
+}
 
 float roadfighter::Bullet::getSpeed() {
     return this->speed;
 }
 
 bool roadfighter::Bullet::toDelete() {
-    return false;
+    return del;
+}
+
+void roadfighter::Bullet::setDelete(bool del) {
+    this->del = true;
 }

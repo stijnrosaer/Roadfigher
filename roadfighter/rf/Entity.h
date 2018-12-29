@@ -34,9 +34,10 @@ namespace roadfighter  {
         virtual void update(float speed, vector<shared_ptr<Entity>> entities) = 0;
         virtual float getSpeed() = 0;
         virtual bool toDelete() = 0;
+        virtual void setDelete(bool del) = 0;
 
         boundaries getBounds();
-        bool collision(vector<shared_ptr<roadfighter::Entity>>);
+        shared_ptr<roadfighter::Entity> collision(vector<shared_ptr<roadfighter::Entity>>);
 
 
 

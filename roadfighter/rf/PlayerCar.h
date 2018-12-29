@@ -16,6 +16,8 @@ namespace roadfighter {
 
         int exploding;
 
+        bool del;
+
     public:
         // constructor
         PlayerCar();
@@ -27,8 +29,9 @@ namespace roadfighter {
 
         // getters and setters
         void setLoc(const pair<float, float> &loc);
-        float getSpeed() override;
 
+        float getSpeed() override;
+        void setDelete(bool del) override;
         bool toDelete() override;
 
     };

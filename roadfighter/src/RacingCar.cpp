@@ -7,10 +7,14 @@
 roadfighter::RacingCar::RacingCar() {}
 
 bool roadfighter::RacingCar::toDelete() {
-    return false;
+    return del;
 }
 
 float roadfighter::RacingCar::getSpeed() {
     return 0;
+}
+
+void roadfighter::RacingCar::setDelete(bool del){
+    this->del = true;
 }
 

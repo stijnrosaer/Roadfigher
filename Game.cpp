@@ -20,8 +20,8 @@ Game::Game() {
 
 void Game::run() {
     pair<float, float> pos = {-2, 8};
-    pos = Transformation::getInstance()->transformTo2DWorldSpace(pos, 600, 450);
-    pos = Transformation::getInstance()->transformToPixelSpace(pos, 600, 450);
+    pos = Transformation::getInstance()->to2DWorldSpace(pos, 600, 450);
+    pos = Transformation::getInstance()->toPixelSpace(pos, 600, 450);
     cout << pos.second << endl;
 
     Background background(window);

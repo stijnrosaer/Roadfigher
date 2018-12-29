@@ -16,7 +16,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/Modules/
 FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 
 # The source files to compile
-set(SRC main.cpp
+SET(SRC main.cpp
         Random.cpp Random.h
         Transformation.cpp Transformation.h
         Game.cpp Game.h

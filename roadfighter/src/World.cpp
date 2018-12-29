@@ -17,11 +17,10 @@ void roadfighter::World::setPlayer(const shared_ptr<roadfighter::Entity> &player
 }
 
 void roadfighter::World::draw() {
-    player->draw();
-
     for(auto &entity : entities){
         entity->draw();
     }
+    player->draw();
 }
 
 void roadfighter::World::update(float speed, vector<shared_ptr<Entity>> entities) {
@@ -33,6 +32,7 @@ void roadfighter::World::update(float speed, vector<shared_ptr<Entity>> entities
     }
 
     toDelete();
+    remCollisions();
 }
 
 float roadfighter::World::getSpeed() {
@@ -51,4 +51,17 @@ bool roadfighter::World::toDelete() {
 
     }
     return true;
+}
+
+void roadfighter::World::remCollisions() {
+    for(auto &item : entities){
+        if(item->collision(entities) != nullptr){
+            item->setDelete(true);
+            item->collision(entities)->setDelete(true);
+        }
+    }
+
+}
+
+void roadfighter::World::setDelete(bool del) {
 }

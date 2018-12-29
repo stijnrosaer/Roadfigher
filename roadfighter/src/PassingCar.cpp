@@ -37,6 +37,8 @@ roadfighter::PassingCar::PassingCar() {
     this->bounds.brLoc = {bounds.loc.first+(bounds.width/2), bounds.loc.second-(bounds.height/2)};
 
     this->speed = 100;
+
+    del = false;
 }
 
 float roadfighter::PassingCar::getSpeed() {
@@ -52,7 +54,18 @@ void roadfighter::PassingCar::update(float speed, vector<shared_ptr<Entity>> ent
 }
 
 bool roadfighter::PassingCar::toDelete() {
-    return bounds.tlLoc.second < -3;
+    if(bounds.tlLoc.second < -3){
+        del = true;
+    } else if (bounds.brLoc.second > 4){
+        del = true;
+    }
+
+    return del;
+}
+
+void roadfighter::PassingCar::setDelete(bool del) {
+    this->del = del;
+
 }
 
 void roadfighter::PassingCar::setLoc(const pair<float, float> &loc) {
