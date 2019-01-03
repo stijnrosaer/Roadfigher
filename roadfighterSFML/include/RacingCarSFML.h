@@ -11,7 +11,7 @@
 namespace roadfighterSFML {
     class RacingCar : public roadfighter::RacingCar {
     private:
-        pair<float, float> pixloc;
+        location pixloc;
         sf::Texture texture;
         sf::Sprite sprite;
         shared_ptr<sf::RenderWindow> window;

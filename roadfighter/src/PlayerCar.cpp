@@ -10,17 +10,17 @@ roadfighter::PlayerCar::PlayerCar() : roadfighter::Entity() {
     this->bounds.width = 0.3;
     this->bounds.height = 0.4;
 
-    this->bounds.tlLoc = {bounds.loc.first-(bounds.width/2), bounds.loc.second+(bounds.height/2)};
-    this->bounds.brLoc = {bounds.loc.first+(bounds.width/2), bounds.loc.second-(bounds.height/2)};
+    this->bounds.tlLoc = {bounds.loc.x-(bounds.width/2), bounds.loc.y+(bounds.height/2)};
+    this->bounds.brLoc = {bounds.loc.x+(bounds.width/2), bounds.loc.y-(bounds.height/2)};
 
     this->speed = 0;
     this->exploding = 0;
 }
 
-void roadfighter::PlayerCar::setLoc(const pair<float, float> &loc) {
+void roadfighter::PlayerCar::setLoc(location loc) {
     this->bounds.loc = loc;
-    this->bounds.tlLoc = {loc.first-(bounds.width/2), loc.second+(bounds.height/2)};
-    this->bounds.brLoc = {loc.first+(bounds.width/2), loc.second-(bounds.height/2)};
+    this->bounds.tlLoc = {loc.x-(bounds.width/2), loc.y+(bounds.height/2)};
+    this->bounds.brLoc = {loc.x+(bounds.width/2), loc.y-(bounds.height/2)};
 }
 
 float roadfighter::PlayerCar::getSpeed() {
@@ -58,7 +58,7 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
         exploding = 0;
 
         this->speed = 0;
-        setLoc({0, this->bounds.loc.second});
+        setLoc({0, this->bounds.loc.y});
 
     }
 }

@@ -34,7 +34,7 @@ roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window) {
 void roadfighterSFML::PlayerCar::draw() {
     pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x,
                                                            this->window->getView().getSize().y);
-    sprite.setPosition(pixloc.first, pixloc.second);
+    sprite.setPosition(pixloc.x, pixloc.y);
     window->draw(sprite);
 }
 
@@ -78,13 +78,13 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        if (bounds.loc.first > -1.3) {
-            this->setLoc({bounds.loc.first - 0.07, bounds.loc.second});
+        if (bounds.loc.x > -1.3) {
+            this->setLoc({bounds.loc.x - 0.07, bounds.loc.y});
         }
 
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-        if (bounds.loc.first < 1.1) {
-            this->setLoc({bounds.loc.first + 0.07, bounds.loc.second});
+        if (bounds.loc.x < 1.1) {
+            this->setLoc({bounds.loc.x + 0.07, bounds.loc.y});
         }
 
     }

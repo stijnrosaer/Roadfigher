@@ -15,11 +15,11 @@ using namespace std;
 namespace roadfighter  {
     class Entity {
         struct boundaries{
-            pair<float, float> loc;
+            location loc;
             float width;
             float height;
-            pair<float, float> tlLoc;
-            pair<float, float> brLoc;
+            location tlLoc;
+            location brLoc;
         };
     protected:
         boundaries bounds;

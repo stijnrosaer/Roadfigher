@@ -16,7 +16,7 @@ roadfighterSFML::Bullet::Bullet(shared_ptr<sf::RenderWindow> window) {
 void roadfighterSFML::Bullet::draw() {
      pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, window->getView().getSize().x,
                                                             window->getView().getSize().y);
-    sprite.setPosition(pixloc.first, pixloc.second);
+    sprite.setPosition(static_cast<float>(pixloc.x), static_cast<float>(pixloc.y));
     window->draw(sprite);
 }
 

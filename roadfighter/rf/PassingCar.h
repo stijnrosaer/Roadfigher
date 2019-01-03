@@ -26,7 +26,7 @@ namespace roadfighter {
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
-        void setLoc(const pair<float, float> &loc);
+        void setLoc(location loc);
 
         float getSpeed() override;
 

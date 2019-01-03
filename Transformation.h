@@ -7,14 +7,19 @@
 
 #include "Singleton.h"
 
+struct location{
+    double x;
+    double y;
+};
+
 
 class Transformation : public Singleton<Transformation> {
 private:
     Transformation() = default;;
 
 public:
-    std::pair<float, float> to2DWorldSpace(const std::pair<float, float> &co, float width, float height);
-    std::pair<float, float> toPixelSpace(const std::pair<float, float> &co, float width, float height);
+    location to2DWorldSpace(const location &co, float width, float height);
+    location toPixelSpace(const location &co, float width, float height);
 };
 
 #endif //PROJECTGP_TRANSFORMATION_H
