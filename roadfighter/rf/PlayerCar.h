@@ -7,14 +7,16 @@
 
 #include "Entity.h"
 #include "World.h"
+#include "Observable.h"
 
 namespace roadfighter {
-    class PlayerCar : public roadfighter::Entity {
+    class PlayerCar : public roadfighter::Entity, public Observable {
     protected:
         float speed;
         float relativeSpeed;
 
         int exploding;
+        int waitForShoot;
 
         bool del;
 

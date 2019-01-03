@@ -6,12 +6,16 @@
 #define PROJECTGP_OBSERVABLE_H
 
 #include <iostream>
-#include <set>
+#include <vector>
 #include <memory>
-#include "../../Game.h"
+#include "Observer.h"
 
 class Observable {
-std::shared_ptr<Game> game;
+    std::vector<std::shared_ptr<Observer>> observers;
+
+public:
+    void addObserver(std::shared_ptr<Observer> observer);
+    void callObserver(action act, Observable& caller);
 };
 
 

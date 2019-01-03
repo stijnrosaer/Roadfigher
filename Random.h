@@ -10,9 +10,18 @@
 
 class Random : public Singleton<Random> {
 private:
-    Random();;
+    /**
+     * constructor voor Random
+     */
+    Random();
 
 public:
+    /**
+     * genereer een random nummer tussen twee waarden
+     * @param begin beginwaarde
+     * @param end eindwaarde
+     * @return random waarde
+     */
     int random(int begin = 0, int end = 100);
 };
 

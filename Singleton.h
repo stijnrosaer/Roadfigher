@@ -13,16 +13,33 @@
 template <typename T>
 class Singleton {
 protected:
+    /**
+     * constructor voor class template Singleton
+     */
     Singleton() = default;
+    /**
+     * destructor voor Singleton
+     */
     ~Singleton() = default;
 
 public:
+    /**
+     * opvragen van unieke instance
+     * @return instance
+     */
     static std::shared_ptr<T> getInstance(){
         static std::shared_ptr<T> instance;
         return instance;
     }
 
+    /**
+     * vookom copy constructor
+     */
     Singleton(Singleton const&) = delete;
+    /**
+     * voorkom asignment operator overloading
+     * @return
+     */
     Singleton& operator=(Singleton const&) = delete;
 };
 

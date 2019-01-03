@@ -15,6 +15,7 @@ roadfighter::PlayerCar::PlayerCar() : roadfighter::Entity() {
 
     this->speed = 0;
     this->exploding = 0;
+    this->waitForShoot = 0;
 }
 
 void roadfighter::PlayerCar::setLoc(location loc) {

@@ -42,7 +42,6 @@ void Game::run() {
         // all actions come here
         //update world
         world->update(0, {});
-        distance += static_cast<float>(world->getSpeed())/100;
 
         if(distance > 100 && abs(prevLoadDist - distance) > 40){
             float chance =((100+ distance/50) * (world->getSpeed()/400))/10;
@@ -85,4 +84,25 @@ void Game::run() {
         }
     }
 }
+
+/*
+void Game::react(action act) {
+    switch (act){
+        case shoot:
+            //fac->createBulle(entity.getBounds().loc);
+            break;
+
+        case hitByBullet:
+            //this->score += 10;
+            break;
+
+        case mv:
+            //distance += entity->getSpeed() / 100;
+            this->score = static_cast<int>(distance/400);
+            break;
+    }
+
+}
+
+*/
 
