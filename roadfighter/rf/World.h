@@ -5,28 +5,27 @@
 #ifndef PROJECTGP_WORLD_H
 #define PROJECTGP_WORLD_H
 
-
 #include "Entity.h"
 #include <typeinfo>
 
 namespace roadfighter {
-    class World : public roadfighter::Entity {
-    private:
+class World : public roadfighter::Entity
+{
+private:
         float speed;
 
         shared_ptr<roadfighter::Entity> player;
         vector<shared_ptr<roadfighter::Entity>> entities;
 
-    public:
+public:
         // constructor
         World();
 
         // getters and setters
-        const shared_ptr<Entity> &getPlayer() const;
+        const shared_ptr<Entity>& getPlayer() const;
 
-
-        void setPlayer(const shared_ptr<Entity> &player);
-        void addEntity(const shared_ptr<Entity> &object);
+        void setPlayer(const shared_ptr<Entity>& player);
+        void addEntity(const shared_ptr<Entity>& object);
 
         // functions
         void draw() override;
@@ -37,9 +36,7 @@ namespace roadfighter {
         void setDelete(bool del) override;
 
         void remCollisions();
+};
+} // namespace roadfighter
 
-
-    };
-}
-
-#endif //PROJECTGP_WORLD_H
+#endif // PROJECTGP_WORLD_H

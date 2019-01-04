@@ -5,21 +5,21 @@
 #ifndef PROJECTGP_OBSERVABLE_H
 #define PROJECTGP_OBSERVABLE_H
 
-#include <iostream>
-#include <vector>
-#include <memory>
 #include "Observer.h"
+#include <iostream>
+#include <memory>
+#include <vector>
 
-class Observable {
-    std::vector<std::shared_ptr<Observer>> observers;
+class Observable
+{
+        std::vector<std::shared_ptr<Observer>> observers;
 
 public:
-    virtual ~Observable();
+        virtual ~Observable();
 
-    void addObserver(std::shared_ptr<Observer> observer);
-    void callObserver(action act);
-    void removeAllObserver();
+        void addObserver(std::shared_ptr<Observer> observer);
+        void callObserver(action act);
+        void removeAllObserver();
 };
 
-
-#endif //PROJECTGP_OBSERVABLE_H
+#endif // PROJECTGP_OBSERVABLE_H

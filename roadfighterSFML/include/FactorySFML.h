@@ -5,16 +5,17 @@
 #ifndef PROJECTGP_FACTORY_SFML_H
 #define PROJECTGP_FACTORY_SFML_H
 
-#include "rf/Factory.h"
 #include "../../Game.h"
+#include "rf/Factory.h"
 
 namespace roadfighterSFML {
-    class Factory : public roadfighter::Factory{
-    private:
+class Factory : public roadfighter::Factory
+{
+private:
         shared_ptr<sf::RenderWindow> window;
         shared_ptr<Observer> game;
 
-    public:
+public:
         Factory(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game);
 
         virtual ~Factory();
@@ -22,9 +23,7 @@ namespace roadfighterSFML {
         shared_ptr<roadfighter::Entity> createPlayerCar() override;
         shared_ptr<roadfighter::Entity> createPassingCar() override;
         shared_ptr<roadfighter::Entity> createBullet(location loc) override;
+};
+} // namespace roadfighterSFML
 
-
-    };
-}
-
-#endif //PROJECTGP_FACTORY_SFML_H
+#endif // PROJECTGP_FACTORY_SFML_H

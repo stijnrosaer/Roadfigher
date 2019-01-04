@@ -8,19 +8,19 @@
 #include "Entity.h"
 
 namespace roadfighter {
-    class PassingCar : public roadfighter::Entity {
-    protected:
+class PassingCar : public roadfighter::Entity
+{
+protected:
         float speed;
         float relativeSpeed;
 
         bool del;
 
-    public:
+public:
         // constructor
         PassingCar();
 
         virtual ~PassingCar();
-
 
         // functions
         void draw() override = 0;
@@ -34,8 +34,7 @@ namespace roadfighter {
 
         bool toDelete() override;
         void movePassingCar();
+};
+} // namespace roadfighter
 
-    };
-}
-
-#endif //PROJECTGP_PASSINGCAR_H
+#endif // PROJECTGP_PASSINGCAR_H

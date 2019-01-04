@@ -4,6 +4,4 @@
 
 #include "../rf/Factory.h"
 
-roadfighter::Factory::~Factory() {
-
-}
+roadfighter::Factory::~Factory() {}

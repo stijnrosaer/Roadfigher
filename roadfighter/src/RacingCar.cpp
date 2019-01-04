@@ -6,15 +6,8 @@
 
 roadfighter::RacingCar::RacingCar() {}
 
-bool roadfighter::RacingCar::toDelete() {
-    return del;
-}
+bool roadfighter::RacingCar::toDelete() { return del; }
 
-float roadfighter::RacingCar::getSpeed() {
-    return 0;
-}
+float roadfighter::RacingCar::getSpeed() { return 0; }
 
-void roadfighter::RacingCar::setDelete(bool del){
-    this->del = true;
-}
-
+void roadfighter::RacingCar::setDelete(bool del) { this->del = true; }

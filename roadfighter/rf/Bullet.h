@@ -8,21 +8,21 @@
 #include "Entity.h"
 
 namespace roadfighter {
-    class Bullet : public Entity {
-    protected:
+class Bullet : public Entity
+{
+protected:
         float speed;
         float relativeSpeed;
 
         bool del;
 
-    public:
+public:
         // constructor
         Bullet(location loc);
 
-
         // functions
         void draw() override = 0;
-        void update(float speed, vector<shared_ptr<Entity>> entities) override ;
+        void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
         void setLoc(location loc);
 
@@ -30,8 +30,7 @@ namespace roadfighter {
         void setDelete(bool del) override;
         bool toDelete() override;
         void moveBullet();
+};
+} // namespace roadfighter
 
-    };
-}
-
-#endif //PROJECTGP_BULLET_H
+#endif // PROJECTGP_BULLET_H

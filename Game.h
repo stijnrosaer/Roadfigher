@@ -5,35 +5,33 @@
 #ifndef PROJECTGP_GAME_H
 #define PROJECTGP_GAME_H
 
-
-#include <rf/Observer.h>
-#include "roadfighterSFML/include/PlayerCarSFML.h"
-#include "rf/World.h"
-#include "rf/Factory.h"
 #include "Background.h"
+#include "rf/Factory.h"
+#include "rf/World.h"
+#include "roadfighterSFML/include/PlayerCarSFML.h"
+#include <rf/Observer.h>
 
-class Game : public Observer {
+class Game : public Observer
+{
 private:
-    shared_ptr<roadfighter::Factory> fac;
-    shared_ptr<sf::RenderWindow> window;
-    shared_ptr<roadfighter::World> world;
+        shared_ptr<roadfighter::Factory> fac;
+        shared_ptr<sf::RenderWindow> window;
+        shared_ptr<roadfighter::World> world;
 
-    float distance;
-    float prevLoadDist;
+        float distance;
+        float prevLoadDist;
 
-    int score;
+        int score;
 
 public:
-    Game();
+        Game();
 
-    virtual ~Game();
+        virtual ~Game();
 
-    void run();
-    void initialize();
+        void run();
+        void initialize();
 
-    void react(action act) override;
-
+        void react(action act) override;
 };
 
-
-#endif //PROJECTGP_GAME_H
+#endif // PROJECTGP_GAME_H

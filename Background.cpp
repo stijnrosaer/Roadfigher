@@ -2,36 +2,37 @@
 // Created by stijn on 13/12/18.
 //
 
-#include <iostream>
 #include "Background.h"
+#include <iostream>
 
-Background::Background(std::shared_ptr<sf::RenderWindow> window) {
-    bgTexture1.loadFromFile("../img/background.png");
-    bgTexture1.setRepeated(true);
+Background::Background(std::shared_ptr<sf::RenderWindow> window)
+{
+        bgTexture1.loadFromFile("../img/background.png");
+        bgTexture1.setRepeated(true);
 
-    bgSprite1.setTexture(bgTexture1);
-    bgSprite1.scale(window->getView().getSize().x / bgTexture1.getSize().x, window->getView().getSize().y / bgTexture1.getSize().y);
-    bgSprite1.setPosition(0,0);
+        bgSprite1.setTexture(bgTexture1);
+        bgSprite1.scale(window->getView().getSize().x / bgTexture1.getSize().x,
+                        window->getView().getSize().y / bgTexture1.getSize().y);
+        bgSprite1.setPosition(0, 0);
 
-    bgY = bgSprite1.getPosition().y;
+        bgY = bgSprite1.getPosition().y;
 
-    bgSprite1.setTextureRect(sf::IntRect(0, static_cast<int>(bgY), static_cast<int>(window->getView().getSize().x),
-                                         static_cast<int>(window->getView().getSize().y)));
+        bgSprite1.setTextureRect(sf::IntRect(0, static_cast<int>(bgY), static_cast<int>(window->getView().getSize().x),
+                                             static_cast<int>(window->getView().getSize().y)));
 }
 
-void Background::update(std::shared_ptr<sf::RenderWindow> window, float move) {
-    if (bgY < window->getView().getSize().y){
-        bgY -= move;
-    } else{
-        bgY = 0;
-    }
+void Background::update(std::shared_ptr<sf::RenderWindow> window, float move)
+{
+        if (bgY < window->getView().getSize().y) {
+                bgY -= move;
+        } else {
+                bgY = 0;
+        }
 
-    bgSprite1.setTextureRect(sf::IntRect(0, static_cast<int>(bgY), static_cast<int>(window->getView().getSize().x),
-                                         static_cast<int>(window->getView().getSize().y)));
+        bgSprite1.setTextureRect(sf::IntRect(0, static_cast<int>(bgY), static_cast<int>(window->getView().getSize().x),
+                                             static_cast<int>(window->getView().getSize().y)));
 }
 
-void Background::draw(std::shared_ptr<sf::RenderWindow> window) {
-    window->draw(bgSprite1);
-}
+void Background::draw(std::shared_ptr<sf::RenderWindow> window) { window->draw(bgSprite1); }
 
 Background::Background() {}

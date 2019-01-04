@@ -5,26 +5,29 @@
 #ifndef PROJECTGP_ENTITY_H
 #define PROJECTGP_ENTITY_H
 
-#include <iostream>
-#include <vector>
-#include <memory>
 #include "../../Transformation.h"
+#include <iostream>
+#include <memory>
+#include <vector>
 
 using namespace std;
 
-namespace roadfighter  {
-    class Entity {
-        struct boundaries{
-            location loc;
-            float width;
-            float height;
-            location tlLoc;
-            location brLoc;
+namespace roadfighter {
+class Entity
+{
+        struct boundaries
+        {
+                location loc;
+                float width;
+                float height;
+                location tlLoc;
+                location brLoc;
         };
-    protected:
+
+protected:
         boundaries bounds;
 
-    public:
+public:
         // constructor
         Entity();
         virtual ~Entity();
@@ -38,11 +41,7 @@ namespace roadfighter  {
 
         boundaries getBounds();
         shared_ptr<roadfighter::Entity> collision(vector<shared_ptr<roadfighter::Entity>>);
+};
+} // namespace roadfighter
 
-
-
-    };
-}
-
-
-#endif //PROJECTGP_ENTITY_H
+#endif // PROJECTGP_ENTITY_H

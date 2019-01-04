@@ -6,18 +6,20 @@
 #define PROJECTGP_PLAYERCAR_H
 
 #include "Entity.h"
-#include "World.h"
 #include "Observable.h"
+#include "World.h"
 
 namespace roadfighter {
-    class PlayerCar : public roadfighter::Entity, public Observable{
-    protected:
-        enum direction{
-            up,
-            down,
-            left,
-            right,
-            slow
+class PlayerCar : public roadfighter::Entity, public Observable
+{
+protected:
+        enum direction
+        {
+                up,
+                down,
+                left,
+                right,
+                slow
         };
 
         float speed;
@@ -29,11 +31,9 @@ namespace roadfighter {
         bool del;
         void movePlayerCar(direction dir);
 
-
-    public:
+public:
         // constructor
         PlayerCar();
-
 
         // functions
         void draw() override = 0;
@@ -46,9 +46,7 @@ namespace roadfighter {
         void setDelete(bool del) override;
         bool toDelete() override;
         void reload();
+};
+} // namespace roadfighter
 
-
-    };
-}
-
-#endif //PROJECTGP_PLAYERCAR_H
+#endif // PROJECTGP_PLAYERCAR_H

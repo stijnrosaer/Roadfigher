@@ -8,17 +8,17 @@
 #include <iostream>
 #include <memory>
 
-enum action{
-    shoot,
-    hitByBullet,
-    mv
+enum action
+{
+        shoot,
+        hitByBullet,
+        mv
 };
 
-class Observer : public std::enable_shared_from_this<Observer> {
+class Observer : public std::enable_shared_from_this<Observer>
+{
 public:
-    virtual void react(action act) = 0;
-
+        virtual void react(action act) = 0;
 };
 
-
-#endif //PROJECTGP_OBSERVER_H
+#endif // PROJECTGP_OBSERVER_H
