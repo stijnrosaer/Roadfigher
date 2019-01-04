@@ -5,8 +5,8 @@
 using namespace std;
 
 int main(){
-    Game g;
-    g.run();
+    auto g = make_shared<Game>() ;
+    g->run();
 
     return 0;
 }

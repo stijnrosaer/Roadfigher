@@ -59,11 +59,55 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
         exploding = 0;
 
         this->speed = 0;
-        setLoc({0, this->bounds.loc.y});
+        setLoc({-0.15, this->bounds.loc.y});
 
+    }
+
+    if (waitForShoot > 0){
+        waitForShoot -= 1;
     }
 }
 
 void roadfighter::PlayerCar::setDelete(bool del) {
     this->del = true;
+}
+
+void roadfighter::PlayerCar::reload() {
+    waitForShoot = 50;
+}
+
+void roadfighter::PlayerCar::movePlayerCar(roadfighter::PlayerCar::direction dir) {
+    switch (dir){
+        case up:
+            if (this->speed < 400){
+                this->speed +=5;
+            }
+            break;
+
+        case down:
+            this->speed -= 10;
+            if (this->speed < 0){
+                this->speed = 0;
+            }
+            break;
+
+        case left:
+            if (bounds.loc.x > -1.3) {
+                this->setLoc({bounds.loc.x - 0.07, bounds.loc.y});
+            }
+            break;
+
+        case right:
+            if (bounds.loc.x < 1.1) {
+                this->setLoc({bounds.loc.x + 0.07, bounds.loc.y});
+            }
+            break;
+
+        case slow:{
+            this->speed -= 3;
+            if (this->speed < 0) {
+                this->speed = 0;
+            }
+        }
+    }
 }

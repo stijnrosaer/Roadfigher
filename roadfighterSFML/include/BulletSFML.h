@@ -18,7 +18,7 @@ namespace roadfighterSFML {
 
 
     public:
-        Bullet(shared_ptr<sf::RenderWindow> window);
+        Bullet(shared_ptr<sf::RenderWindow> window, location loc);
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 

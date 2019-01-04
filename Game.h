@@ -29,6 +29,7 @@ public:
     virtual ~Game();
 
     void run();
+    void initialize();
 
     void react(action act) override;
 

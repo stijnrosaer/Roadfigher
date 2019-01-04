@@ -15,15 +15,13 @@ roadfighterSFML::PassingCar::PassingCar(shared_ptr<sf::RenderWindow> window) {
 void roadfighterSFML::PassingCar::draw() {
     pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x,
                                                            this->window->getView().getSize().y);
-    sprite.setPosition(pixloc.x, pixloc.y);
+    sprite.setPosition(static_cast<float>(pixloc.x), static_cast<float>(pixloc.y));
     window->draw(sprite);
 }
 
 void roadfighterSFML::PassingCar::update(float speed, vector<shared_ptr<Entity>> entities) {
     roadfighter::PassingCar::update(speed, entities);
-    setLoc(Transformation::getInstance()->toPixelSpace({pixloc.x, pixloc.y - (15 * this->relativeSpeed) / 400},
-                                                       window->getView().getSize().x, window->getView().getSize().y));
-
+    movePassingCar();
 }
 
 roadfighterSFML::PassingCar::~PassingCar(){

@@ -10,8 +10,16 @@
 #include "Observable.h"
 
 namespace roadfighter {
-    class PlayerCar : public roadfighter::Entity, public Observable {
+    class PlayerCar : public roadfighter::Entity, public Observable{
     protected:
+        enum direction{
+            up,
+            down,
+            left,
+            right,
+            slow
+        };
+
         float speed;
         float relativeSpeed;
 
@@ -19,6 +27,8 @@ namespace roadfighter {
         int waitForShoot;
 
         bool del;
+        void movePlayerCar(direction dir);
+
 
     public:
         // constructor
@@ -35,6 +45,8 @@ namespace roadfighter {
         float getSpeed() override;
         void setDelete(bool del) override;
         bool toDelete() override;
+        void reload();
+
 
     };
 }

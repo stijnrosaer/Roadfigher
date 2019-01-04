@@ -21,6 +21,7 @@ namespace roadfighterSFML {
 
         shared_ptr<roadfighter::Entity> createPlayerCar() override;
         shared_ptr<roadfighter::Entity> createPassingCar() override;
+        shared_ptr<roadfighter::Entity> createBullet(location loc) override;
 
 
     };

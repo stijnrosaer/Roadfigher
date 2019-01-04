@@ -50,7 +50,6 @@ roadfighter::PassingCar::~PassingCar(){
 
 void roadfighter::PassingCar::update(float speed, vector<shared_ptr<Entity>> entities) {
     this->relativeSpeed = this->speed - speed;
-    // todo: location hier aanpassen met relative speed
 }
 
 bool roadfighter::PassingCar::toDelete() {
@@ -72,4 +71,8 @@ void roadfighter::PassingCar::setLoc(location loc) {
     this->bounds.tlLoc = loc;
     this->bounds.loc = {loc.x+(bounds.width/2), loc.y-(bounds.height/2)};
     this->bounds.brLoc = {loc.x+bounds.width, loc.y-bounds.height};
+}
+
+void roadfighter::PassingCar::movePassingCar() {
+    setLoc({bounds.tlLoc.x, bounds.tlLoc.y + relativeSpeed*0.0005});
 }

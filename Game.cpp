@@ -9,10 +9,11 @@
 
 
 void Game::run() {
-    location pos = {-2, 8};
+    initialize();
+    location pos = {-0.225, -2};
     pos = Transformation::getInstance()->to2DWorldSpace(pos, 600, 450);
     pos = Transformation::getInstance()->toPixelSpace(pos, 600, 450);
-    cout << pos.y << endl;
+    cout << pos.x << endl;
 
     Background background(window);
 
@@ -61,7 +62,16 @@ void Game::run() {
         dist.setCharacterSize(20);
         dist.setFillColor(sf::Color::White);
         dist.setPosition(430, 350);
+
+        sf::Text scr;
+        scr.setFont(font);
+        scr.setString("score: " + to_string(score));
+        scr.setCharacterSize(20);
+        scr.setFillColor(sf::Color::White);
+        scr.setPosition(430, 375);
+
         window->draw(dist);
+        window->draw(scr);
 
         window->display();
 
@@ -78,7 +88,8 @@ void Game::run() {
 void Game::react(action act) {
     switch (act){
         case shoot:
-            //fac->createBulle(entity.getBounds().loc);
+            world->addEntity(fac->createBullet(world->getPlayer()->getBounds().loc));
+//            cout << "shoot" << endl;
             break;
 
         case hitByBullet:
@@ -87,7 +98,7 @@ void Game::react(action act) {
 
         case mv:
             distance += world->getSpeed() / 100;
-            this->score = static_cast<int>(distance/400);
+            this->score = static_cast<int>(distance/100);
             break;
     }
 
@@ -99,12 +110,14 @@ Game::~Game() {
 
 Game::Game() {
     distance = 0;
+    score = 0;
     prevLoadDist = 100;
+}
 
+void Game::initialize() {
     window = make_shared<sf::RenderWindow>(sf::VideoMode(600, 450), "Roadfighter");
     this->world = make_shared<roadfighter::World>();
     fac = make_shared<roadfighterSFML::Factory>(window, shared_from_this());
 
     world->setPlayer(fac->createPlayerCar());
 }
-

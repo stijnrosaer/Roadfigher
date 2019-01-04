@@ -8,7 +8,7 @@
 #include <utility>
 
 
-roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window, weak_ptr<Observer> game) {
+roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game) {
     this->window = std::move(window);
     sf::Texture car;
     sf::Texture exp0;
@@ -68,36 +68,31 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
     bool speedKeyPressed = false;
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-        this->speed += 5;
-        if (this->speed > 400){
-            this->speed = 400;
-        }
+        movePlayerCar(up);
+
         speedKeyPressed = true;
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-        this->speed -= 10;
-        if (this->speed < 0){
-            this->speed = 0;
-        }
+        movePlayerCar(down);
         speedKeyPressed = true;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        if (bounds.loc.x > -1.3) {
-            this->setLoc({bounds.loc.x - 0.07, bounds.loc.y});
-        }
+        movePlayerCar(left);
 
     } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-        if (bounds.loc.x < 1.1) {
-            this->setLoc({bounds.loc.x + 0.07, bounds.loc.y});
-        }
+        movePlayerCar(right);
 
+    } else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+        if (waitForShoot == 0) {
+            callObserver(shoot);
+            reload();
+        }
     }
     if (!speedKeyPressed) {
-        this->speed -= 3;
-        if (this->speed < 0) {
-            this->speed = 0;
-        }
+        movePlayerCar(slow);
     }
 
     callObserver(mv);
 }
+
+

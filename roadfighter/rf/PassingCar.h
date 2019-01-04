@@ -33,6 +33,7 @@ namespace roadfighter {
         void setDelete(bool del) override;
 
         bool toDelete() override;
+        void movePassingCar();
 
     };
 }

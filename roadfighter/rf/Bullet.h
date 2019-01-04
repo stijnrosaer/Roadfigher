@@ -17,18 +17,19 @@ namespace roadfighter {
 
     public:
         // constructor
-        Bullet();
+        Bullet(location loc);
 
 
         // functions
         void draw() override = 0;
-        void update(float speed, vector<shared_ptr<Entity>> entities) override = 0;
+        void update(float speed, vector<shared_ptr<Entity>> entities) override ;
 
-        void setLoc(location &loc);
+        void setLoc(location loc);
 
         float getSpeed() override;
         void setDelete(bool del) override;
         bool toDelete() override;
+        void moveBullet();
 
     };
 }
