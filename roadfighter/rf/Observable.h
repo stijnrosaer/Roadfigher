@@ -11,11 +11,14 @@
 #include "Observer.h"
 
 class Observable {
-    std::vector<std::shared_ptr<Observer>> observers;
+    std::vector<std::weak_ptr<Observer>> observers;
 
 public:
-    void addObserver(std::shared_ptr<Observer> observer);
-    void callObserver(action act, Observable& caller);
+    virtual ~Observable();
+
+    void addObserver(std::weak_ptr<Observer> observer);
+    void callObserver(action act);
+    void removeAllObserver();
 };
 
 

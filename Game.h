@@ -6,13 +6,13 @@
 #define PROJECTGP_GAME_H
 
 
-//#include <rf/Observer.h>
+#include <rf/Observer.h>
 #include "roadfighterSFML/include/PlayerCarSFML.h"
 #include "rf/World.h"
 #include "rf/Factory.h"
 #include "Background.h"
 
-class Game{
+class Game : public Observer {
 private:
     shared_ptr<roadfighter::Factory> fac;
     shared_ptr<sf::RenderWindow> window;
@@ -25,11 +25,12 @@ private:
 
 public:
     Game();
+
+    virtual ~Game();
+
     void run();
 
-private:
-    //void react(action act) override;
-
+    void react(action act) override;
 
 };
 

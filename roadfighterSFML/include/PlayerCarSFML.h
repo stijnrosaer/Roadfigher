@@ -9,6 +9,9 @@
 #include <SFML/Graphics.hpp>
 
 namespace roadfighterSFML {
+
+    class Game;
+
     class PlayerCar : public roadfighter::PlayerCar {
     private:
         location pixloc;
@@ -19,7 +22,7 @@ namespace roadfighterSFML {
 
 
     public:
-        PlayerCar(shared_ptr<sf::RenderWindow> window);
+        PlayerCar(shared_ptr<sf::RenderWindow> window, weak_ptr<Observer> game);
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 

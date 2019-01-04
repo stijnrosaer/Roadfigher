@@ -6,14 +6,16 @@
 #define PROJECTGP_FACTORY_SFML_H
 
 #include "rf/Factory.h"
+#include "../../Game.h"
 
 namespace roadfighterSFML {
     class Factory : public roadfighter::Factory{
     private:
         shared_ptr<sf::RenderWindow> window;
+        shared_ptr<Observer> game;
 
     public:
-        Factory(shared_ptr<sf::RenderWindow> window);
+        Factory(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game);
 
         virtual ~Factory();
 

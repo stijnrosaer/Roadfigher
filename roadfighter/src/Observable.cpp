@@ -4,13 +4,22 @@
 
 #include "../rf/Observable.h"
 
-void Observable::addObserver(std::shared_ptr <Observer> observer) {
+void Observable::addObserver(std::weak_ptr <Observer> observer) {
     this->observers.push_back(observer);
 }
 
-void Observable::callObserver(action act, Observable& caller) {
-    for(auto &item : observers){
-        item->react(act);
+void Observable::removeAllObserver(){
+    observers.clear();
+}
+
+void Observable::callObserver(action act) {
+    for(std::weak_ptr<Observer> &(item) : observers){
+        //item->react(act);
     }
+
+}
+
+Observable::~Observable() {
+    removeAllObserver();
 
 }

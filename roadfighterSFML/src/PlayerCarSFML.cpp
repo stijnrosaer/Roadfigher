@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by stijn on 16/11/18.
 //
@@ -6,7 +8,7 @@
 #include <utility>
 
 
-roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window) {
+roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window, weak_ptr<Observer> game) {
     this->window = std::move(window);
     sf::Texture car;
     sf::Texture exp0;
@@ -27,6 +29,8 @@ roadfighterSFML::PlayerCar::PlayerCar(shared_ptr<sf::RenderWindow> window) {
 
     sprite.setTexture(textures[0]);
     sprite.scale(2.2f, 2.2f);
+
+    this->addObserver(std::move(game));
 
 }
 
@@ -94,4 +98,6 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
             this->speed = 0;
         }
     }
+
+    callObserver(mv);
 }

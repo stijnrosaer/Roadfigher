@@ -7,16 +7,6 @@
 #include "Random.h"
 #include <chrono>
 
-Game::Game() {
-    window = make_shared<sf::RenderWindow>(sf::VideoMode(600, 450), "Roadfighter");
-    this->world = make_shared<roadfighter::World>();
-    fac = make_shared<roadfighterSFML::Factory>(window);
-
-    world->setPlayer(fac->createPlayerCar());
-
-    distance = 0;
-    prevLoadDist = 200;
-}
 
 void Game::run() {
     location pos = {-2, 8};
@@ -85,7 +75,6 @@ void Game::run() {
     }
 }
 
-/*
 void Game::react(action act) {
     switch (act){
         case shoot:
@@ -93,16 +82,29 @@ void Game::react(action act) {
             break;
 
         case hitByBullet:
-            //this->score += 10;
+            this->score += 10;
             break;
 
         case mv:
-            //distance += entity->getSpeed() / 100;
+            distance += world->getSpeed() / 100;
             this->score = static_cast<int>(distance/400);
             break;
     }
 
 }
 
-*/
+Game::~Game() {
+
+}
+
+Game::Game() {
+    distance = 0;
+    prevLoadDist = 100;
+
+    window = make_shared<sf::RenderWindow>(sf::VideoMode(600, 450), "Roadfighter");
+    this->world = make_shared<roadfighter::World>();
+    fac = make_shared<roadfighterSFML::Factory>(window, shared_from_this());
+
+    world->setPlayer(fac->createPlayerCar());
+}
 

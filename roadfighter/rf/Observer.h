@@ -5,6 +5,8 @@
 #ifndef PROJECTGP_OBSERVER_H
 #define PROJECTGP_OBSERVER_H
 
+#include <iostream>
+#include <memory>
 
 enum action{
     shoot,
@@ -12,7 +14,7 @@ enum action{
     mv
 };
 
-class Observer {
+class Observer : public std::enable_shared_from_this<Observer> {
 public:
     virtual void react(action act) = 0;
 
