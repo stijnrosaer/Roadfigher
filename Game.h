@@ -6,6 +6,7 @@
 #define PROJECTGP_GAME_H
 
 #include "Background.h"
+#include "Random.h"
 #include "rf/Factory.h"
 #include "rf/World.h"
 #include "roadfighterSFML/include/PlayerCarSFML.h"

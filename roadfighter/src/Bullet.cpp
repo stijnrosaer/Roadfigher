@@ -15,9 +15,9 @@ roadfighter::Bullet::Bullet(location loc)
         this->bounds.tlLoc = {bounds.loc.x - (bounds.width / 2), bounds.loc.y + (bounds.height / 2)};
         this->bounds.brLoc = {bounds.loc.x + (bounds.width / 2), bounds.loc.y - (bounds.height / 2)};
 
-        cout << "bounds: " << bounds.tlLoc.x << " = " << bounds.tlLoc.y << endl;
+        //        cout << "bounds: " << bounds.tlLoc.x << " = " << bounds.tlLoc.y << endl;
 
-        this->speed = 500;
+        this->speed = 800;
 
         del = false;
 }

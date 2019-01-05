@@ -3,7 +3,6 @@
 //
 
 #include "Game.h"
-#include "Random.h"
 #include "roadfighterSFML/include/FactorySFML.h"
 #include <chrono>
 
@@ -37,7 +36,7 @@ void Game::run()
                 if (distance > 100 && abs(prevLoadDist - distance) > 40) {
                         float chance = ((100 + distance / 50) * (world->getSpeed() / 400)) / 10;
                         //            cout << chance << endl;
-                        if (Random::getInstance()->random(1, 200) < chance) {
+                        if (Random::getInstance()->chance(chance / 200)) {
                                 world->addEntity(fac->createPassingCar());
                                 prevLoadDist = distance;
                         }

@@ -20,7 +20,6 @@ private:
          * constructor voor Transformation
          */
         Transformation() = default;
-        ;
 
 public:
         /**

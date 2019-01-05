@@ -81,8 +81,8 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
 
         } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
                 movePlayerCar(right);
-
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
                 if (waitForShoot == 0) {
                         callObserver(shoot);
                         reload();
