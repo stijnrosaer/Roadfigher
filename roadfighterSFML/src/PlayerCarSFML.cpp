@@ -46,16 +46,16 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
         roadfighter::PlayerCar::update(speed, entities);
 
         if (exploding <= 50 && exploding > 0) {
-                if (exploding == 3) {
+                if (exploding == 2) {
                         sprite.setTexture(textures[1]);
                         return;
-                } else if (exploding == 6) {
+                } else if (exploding == 5) {
                         sprite.setTexture(textures[2]);
                         return;
-                } else if (exploding == 9) {
+                } else if (exploding == 10) {
                         sprite.setTexture(textures[3]);
                         return;
-                } else if (exploding == 12) {
+                } else if (exploding == 15) {
                         sprite.setTexture(textures[3]);
                         return;
                 } else if (exploding == 50) {

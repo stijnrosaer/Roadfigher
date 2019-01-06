@@ -18,7 +18,7 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
-        Bullet(shared_ptr<sf::RenderWindow> window, location loc);
+        Bullet(shared_ptr<sf::RenderWindow> window, location loc, shared_ptr<Observer> game);
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 };

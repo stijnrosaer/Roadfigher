@@ -45,6 +45,9 @@ void roadfighter::Bullet::setLoc(location loc)
 
 void roadfighter::Bullet::update(float speed, vector<shared_ptr<roadfighter::Entity>> entities)
 {
+        if (this->collision(entities) != nullptr) {
+                this->callObserver(hitByBullet);
+        }
         this->relativeSpeed = this->speed - speed;
 }
 

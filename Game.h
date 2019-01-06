@@ -22,7 +22,7 @@ private:
         float distance;
         float prevLoadDist;
 
-        int score;
+        double score;
 
 public:
         Game();

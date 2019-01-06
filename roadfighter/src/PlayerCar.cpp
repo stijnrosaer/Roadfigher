@@ -67,7 +67,7 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
 
 void roadfighter::PlayerCar::setDelete(bool del) { this->del = true; }
 
-void roadfighter::PlayerCar::reload() { waitForShoot = 15; }
+void roadfighter::PlayerCar::reload() { waitForShoot = 50; }
 
 void roadfighter::PlayerCar::movePlayerCar(roadfighter::PlayerCar::direction dir)
 {

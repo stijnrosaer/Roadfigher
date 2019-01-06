@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by stijn on 16/11/18.
 //
@@ -5,12 +7,15 @@
 #include "../include/BulletSFML.h"
 #include <utility>
 
-roadfighterSFML::Bullet::Bullet(shared_ptr<sf::RenderWindow> window, location loc) : roadfighter::Bullet(loc)
+roadfighterSFML::Bullet::Bullet(shared_ptr<sf::RenderWindow> window, location loc, shared_ptr<Observer> game)
+    : roadfighter::Bullet(loc)
 {
         this->window = std::move(window);
-        this->texture.loadFromFile("../img/flag_cyan.png");
+        this->texture.loadFromFile("../img/bullet.png");
         sprite.setTexture(texture);
         sprite.scale(2.2f, 2.2f);
+
+        this->addObserver(std::move(game));
 }
 
 void roadfighterSFML::Bullet::draw()

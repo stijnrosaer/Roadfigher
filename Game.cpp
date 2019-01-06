@@ -64,7 +64,7 @@ void Game::run()
 
                 sf::Text scr;
                 scr.setFont(font);
-                scr.setString("score: " + to_string(score));
+                scr.setString("score: " + to_string(static_cast<int>(score)));
                 scr.setCharacterSize(20);
                 scr.setFillColor(sf::Color::White);
                 scr.setPosition(430, 375);
@@ -89,7 +89,6 @@ void Game::react(action act)
         switch (act) {
         case shoot:
                 world->addEntity(fac->createBullet(world->getPlayer()->getBounds().loc));
-                //            cout << "shoot" << endl;
                 break;
 
         case hitByBullet:
@@ -97,8 +96,9 @@ void Game::react(action act)
                 break;
 
         case mv:
+                double prevdist = distance;
                 distance += world->getSpeed() / 100;
-                this->score = static_cast<int>(distance / 100);
+                this->score += ((distance - prevdist) / 100);
                 break;
         }
 }

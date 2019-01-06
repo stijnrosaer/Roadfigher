@@ -6,9 +6,10 @@
 #define PROJECTGP_BULLET_H
 
 #include "Entity.h"
+#include "Observable.h"
 
 namespace roadfighter {
-class Bullet : public Entity
+class Bullet : public Entity, public Observable
 {
 protected:
         float speed;
