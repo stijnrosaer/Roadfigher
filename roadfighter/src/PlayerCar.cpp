@@ -55,9 +55,9 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
                 return;
         }
         if (exploding == 50) {
-                for (auto& item : entities) {
-                        item->setDelete(true);
-                }
+//                for (auto& item : entities) {
+//                        item->setDelete(true);
+//                }
                 exploding = 0;
 
                 this->speed = 0;

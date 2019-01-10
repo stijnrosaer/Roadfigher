@@ -5,7 +5,7 @@
 #include "../rf/RacingCar.h"
 
 roadfighter::RacingCar::RacingCar() {
-    this->bounds.loc = {0,0};
+    this->bounds.loc = {0.75,-2.5};
     this->bounds.width = 0.3;
     this->bounds.height = 0.4;
 
@@ -17,47 +17,71 @@ roadfighter::RacingCar::RacingCar() {
     del = false;
 }
 
-bool roadfighter::RacingCar::toDelete() { return del; }
+bool roadfighter::RacingCar::toDelete() {
+    cout << del << endl;
+    return del; }
 
 float roadfighter::RacingCar::getSpeed() { return 0; }
 
-void roadfighter::RacingCar::setDelete(bool del) { this->del = del; }
+void roadfighter::RacingCar::setDelete(bool del) {
+    cout << "setdel" << endl;
+    this->del = del; }
 
 void roadfighter::RacingCar::update(float speed, vector<shared_ptr<roadfighter::Entity>> entities) {
-    if (speed < 150){
-        speed += 5;
-        this->relativeSpeed = this->speed - speed;
+    if (this->speed < 200){
+        this->speed += 5;
     } else {
-        if (Random::getInstance()->chance(0.35)) {
-            if (this->speed < 450) {
-                this->speed += 5;
-                this->relativeSpeed = this->speed - speed;
+        if (this->speed >= speed) {
+            if (Random::getInstance()->chance(0.10)) {
+                if (this->speed < 500) {
+                    this->speed += 5;
+                }
+            } else if (Random::getInstance()->chance(0.50)) {
+                if (this->speed > 200) {
+                    this->speed -= 5;
+                }
             }
-        } else if (Random::getInstance()->chance(0.25)) {
-            if (this->speed > 200) {
-                this->speed -= 5;
-                this->relativeSpeed = this->speed - speed;
+        } else{
+            if (Random::getInstance()->chance(0.50)) {
+                if (this->speed < 500) {
+                    this->speed += 5;
+                }
+            } else if (Random::getInstance()->chance(0.10)) {
+                if (this->speed > 250) {
+                    this->speed -= 5;
+                }
             }
         }
     }
 
+    this->relativeSpeed = this->speed - speed;
     this->moveRacingCar(up);
 
     if (this->collision(entities) != nullptr) {
-        if (Random::getInstance()->chance(0.8)) {
+        if (Random::getInstance()->chance(0.85)) {
             if (Random::getInstance()->chance(0.5)) {
                 //move left
                 while (this->collision(entities) != nullptr && this->bounds.loc.x > -1.3) {
                     this->moveRacingCar(left);
+//                    cout << this->bounds.loc.x << endl;
                 }
             } else {
                 //move right
                 while (this->collision(entities) != nullptr && this->bounds.loc.x < 1.1) {
                     this->moveRacingCar(right);
+//                    cout << this->bounds.loc.x << endl;
+
                 }
             }
         }
     }
+
+    if(collision(entities) != nullptr){
+        this->setLoc({0, -4});
+        this->speed = 250;
+    }
+
+//    cout << this->speed << endl;
 }
 
 void roadfighter::RacingCar::moveRacingCar(roadfighter::RacingCar::direction dir) {
@@ -72,11 +96,11 @@ void roadfighter::RacingCar::moveRacingCar(roadfighter::RacingCar::direction dir
             break;
 
         case left:
-            setLoc({bounds.tlLoc.x - 0.1, bounds.tlLoc.y});
+            setLoc({bounds.tlLoc.x - 0.15, bounds.tlLoc.y});
             break;
 
         case right:
-            setLoc({bounds.tlLoc.x + 0.1, bounds.tlLoc.y});
+            setLoc({bounds.tlLoc.x + 0.15, bounds.tlLoc.y});
             break;
         case slow:break;
     }

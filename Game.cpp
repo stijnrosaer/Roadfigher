@@ -9,10 +9,10 @@
 void Game::run()
 {
         initialize();
-        location pos = {-0.225, -2};
-        pos = Transformation::getInstance()->to2DWorldSpace(pos, 600, 450);
-        pos = Transformation::getInstance()->toPixelSpace(pos, 600, 450);
-        cout << pos.x << endl;
+//        location pos = {-0.225, -2};
+//        pos = Transformation::getInstance()->to2DWorldSpace(pos, 600, 450);
+//        pos = Transformation::getInstance()->toPixelSpace(pos, 600, 450);
+//        cout << pos.x << endl;
 
         Background background(window);
 
@@ -117,5 +117,5 @@ void Game::initialize()
         fac = make_shared<roadfighterSFML::Factory>(window, shared_from_this());
 
         world->setPlayer(fac->createPlayerCar());
-        world->addEntity(fac->createRacingCar());
+        world->addRacingCars(fac->createRacingCar());
 }

@@ -16,6 +16,7 @@ private:
 
         shared_ptr<roadfighter::Entity> player;
         vector<shared_ptr<roadfighter::Entity>> entities;
+        vector<shared_ptr<roadfighter::Entity>> racingCars;
 
 public:
         // constructor
@@ -26,8 +27,10 @@ public:
 
         void setPlayer(const shared_ptr<Entity>& player);
         void addEntity(const shared_ptr<Entity>& object);
+    void addRacingCars(const shared_ptr<Entity>& passingCar);
 
-        // functions
+
+    // functions
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 

@@ -25,4 +25,5 @@ void roadfighterSFML::RacingCar::draw()
 void roadfighterSFML::RacingCar::update(float speed, vector<shared_ptr<Entity>> entities)
 {
         roadfighter::RacingCar::update(speed, entities);
+        draw();
 }
