@@ -16,6 +16,9 @@ protected:
 
         bool del;
 
+    void movePassingCar();
+
+
 public:
         // constructor
         PassingCar();
@@ -25,15 +28,10 @@ public:
         // functions
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
-
         void setLoc(location loc);
-
         float getSpeed() override;
-
         void setDelete(bool del) override;
-
         bool toDelete() override;
-        void movePassingCar();
 };
 } // namespace roadfighter
 

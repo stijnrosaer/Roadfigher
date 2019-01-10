@@ -119,4 +119,5 @@ void Game::initialize()
         fac = make_shared<roadfighterSFML::Factory>(window, shared_from_this());
 
         world->setPlayer(fac->createPlayerCar());
+        world->addEntity(fac->createRacingCar());
 }

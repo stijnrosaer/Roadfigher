@@ -6,6 +6,7 @@
 #include "../include/BulletSFML.h"
 #include "../include/PassingCarSFML.h"
 #include "../include/PlayerCarSFML.h"
+#include "../include/RacingCarSFML.h"
 
 roadfighterSFML::Factory::~Factory() {}
 
@@ -28,4 +29,8 @@ roadfighterSFML::Factory::Factory(shared_ptr<sf::RenderWindow> w, shared_ptr<Obs
 shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createBullet(location loc)
 {
         return make_shared<roadfighterSFML::Bullet>(this->window, loc, this->game);
+}
+
+shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createRacingCar() {
+    return make_shared<roadfighterSFML::RacingCar>(this->window);
 }

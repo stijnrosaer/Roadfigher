@@ -6,6 +6,7 @@
 #define PROJECTGP_ENTITY_H
 
 #include "../../Transformation.h"
+#include "../../Random.h"
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -40,7 +41,10 @@ public:
         virtual void setDelete(bool del) = 0;
 
         boundaries getBounds();
-        shared_ptr<roadfighter::Entity> collision(vector<shared_ptr<roadfighter::Entity>>);
+
+    void setBounds(const boundaries &bounds);
+
+    shared_ptr<roadfighter::Entity> collision(vector<shared_ptr<roadfighter::Entity>>);
 };
 } // namespace roadfighter
 
