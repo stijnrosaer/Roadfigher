@@ -32,6 +32,7 @@ bool roadfighter::PlayerCar::toDelete() { return del; }
 void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::Entity>> entities)
 {
         if (collision(entities)) {
+                collision(entities)->setDelete(true);
                 exploding++;
                 if (this->speed > 0) {
                         this->speed -= 30;
@@ -54,6 +55,9 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
                 return;
         }
         if (exploding == 50) {
+                for (auto& item : entities) {
+                        item->setDelete(true);
+                }
                 exploding = 0;
 
                 this->speed = 0;

@@ -34,7 +34,7 @@ void Game::run()
                 world->update(0, {});
 
                 if (distance > 100 && abs(prevLoadDist - distance) > 40) {
-                        float chance = ((100 + distance / 50) * (world->getSpeed() / 400)) / 10;
+                        float chance = ((100 + distance / 50) * (world->getSpeed() / 450)) / 10;
                         //            cout << chance << endl;
                         if (Random::getInstance()->chance(chance / 200)) {
                                 world->addEntity(fac->createPassingCar());
@@ -43,7 +43,7 @@ void Game::run()
                 }
 
                 // update background
-                background.update(window, static_cast<float>((15.0 * world->getSpeed()) / 400));
+                background.update(window, static_cast<float>((15.0 * world->getSpeed()) / 350));
 
                 // draw background
                 background.draw(window);
