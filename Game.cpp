@@ -59,14 +59,12 @@ void Game::run()
                 dist.setFont(font);
                 dist.setString("distance: " + to_string(static_cast<int>(distance)));
                 dist.setCharacterSize(20);
-                dist.setFillColor(sf::Color::White);
                 dist.setPosition(430, 350);
 
                 sf::Text scr;
                 scr.setFont(font);
                 scr.setString("score: " + to_string(static_cast<int>(score)));
                 scr.setCharacterSize(20);
-                scr.setFillColor(sf::Color::White);
                 scr.setPosition(430, 375);
 
                 window->draw(dist);
