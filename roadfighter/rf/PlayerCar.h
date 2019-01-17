@@ -39,6 +39,8 @@ public:
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
+        bool finish() override;
+
         // getters and setters
         void setLoc(location loc);
 

@@ -11,21 +11,20 @@ namespace roadfighter {
 class RacingCar : public roadfighter::Entity
 {
 protected:
-    enum direction
-    {
-        up,
-        down,
-        left,
-        right,
-        slow
-    };
+        enum direction
+        {
+                up,
+                down,
+                left,
+                right,
+                slow
+        };
         float speed;
         float relativeSpeed;
 
         bool del;
 
-    void moveRacingCar(direction dir);
-
+        void moveRacingCar(direction dir);
 
 public:
         // constructor
@@ -34,6 +33,9 @@ public:
         // functions
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
+
+        bool finish() override;
+
         void setLoc(location loc);
         float getSpeed() override;
         void setDelete(bool del) override;

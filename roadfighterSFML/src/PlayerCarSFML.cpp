@@ -88,7 +88,7 @@ void roadfighterSFML::PlayerCar::update(float speed, vector<shared_ptr<Entity>> 
                         reload();
                 }
         }
-        if (!speedKeyPressed) {
+        if (!speedKeyPressed && this->speed > 0) {
                 movePlayerCar(slow);
         }
 

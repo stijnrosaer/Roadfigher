@@ -11,7 +11,6 @@ roadfighterSFML::RacingCar::RacingCar(shared_ptr<sf::RenderWindow> window)
         this->texture.loadFromFile("../img/racing_car.png");
         sprite.setTexture(texture);
         sprite.scale(2.2f, 2.2f);
-
 }
 
 void roadfighterSFML::RacingCar::draw()

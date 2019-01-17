@@ -19,8 +19,7 @@ public:
         virtual std::shared_ptr<roadfighter::Entity> createPassingCar() = 0;
         virtual std::shared_ptr<roadfighter::Entity> createBullet(location loc) = 0;
         virtual std::shared_ptr<roadfighter::Entity> createRacingCar() = 0;
-
 };
-}// namespace roadfighter
+} // namespace roadfighter
 
 #endif // PROJECTGP_FACTORY_H

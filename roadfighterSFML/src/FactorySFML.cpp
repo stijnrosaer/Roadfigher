@@ -31,6 +31,7 @@ shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createBullet(location 
         return make_shared<roadfighterSFML::Bullet>(this->window, loc, this->game);
 }
 
-shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createRacingCar() {
-    return make_shared<roadfighterSFML::RacingCar>(this->window);
+shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createRacingCar()
+{
+        return make_shared<roadfighterSFML::RacingCar>(this->window);
 }

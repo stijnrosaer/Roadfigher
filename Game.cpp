@@ -9,12 +9,10 @@
 void Game::run()
 {
         initialize();
-//        location pos = {-0.225, -2};
-//        pos = Transformation::getInstance()->to2DWorldSpace(pos, 600, 450);
-//        pos = Transformation::getInstance()->toPixelSpace(pos, 600, 450);
-//        cout << pos.x << endl;
-
-        Background background(window);
+        //        location pos = {-0.225, -2};
+        //        pos = Transformation::getInstance()->to2DWorldSpace(pos, 600, 450);
+        //        pos = Transformation::getInstance()->toPixelSpace(pos, 600, 450);
+        //        cout << pos.x << endl;
 
         double fps = 30;
         double tpf = 1 / fps;
@@ -30,45 +28,24 @@ void Game::run()
                 window->clear(sf::Color(200, 0, 0));
 
                 // all actions come here
-                // update world
-                world->update(0, {});
-
-                if (distance > 100 && abs(prevLoadDist - distance) > 40) {
-                        float chance = ((100 + distance / 50) * (world->getSpeed() / 450)) / 10;
-                        //            cout << chance << endl;
-                        if (Random::getInstance()->chance(chance / 200)) {
-                                world->addEntity(fac->createPassingCar());
-                                prevLoadDist = distance;
-                        }
+                // check if finish is reached
+                if (distance >= 10000) {
+                        finish();
+                } else {
+                        // update world
+                        update();
                 }
 
                 // update background
-                background.update(window, static_cast<float>((15.0 * world->getSpeed()) / 350));
+                background->update(window, world->getSpeed());
 
                 // draw background
-                background.draw(window);
+                background->draw(window);
 
                 // draw world
                 world->draw();
 
-                // draw extra display elements
-                sf::Font font;
-                font.loadFromFile("../font/Arial.ttf");
-
-                sf::Text dist;
-                dist.setFont(font);
-                dist.setString("distance: " + to_string(static_cast<int>(distance)));
-                dist.setCharacterSize(20);
-                dist.setPosition(430, 350);
-
-                sf::Text scr;
-                scr.setFont(font);
-                scr.setString("score: " + to_string(static_cast<int>(score)));
-                scr.setCharacterSize(20);
-                scr.setPosition(430, 375);
-
-                window->draw(dist);
-                window->draw(scr);
+                printDisplayElements();
 
                 window->display();
 
@@ -118,4 +95,56 @@ void Game::initialize()
 
         world->setPlayer(fac->createPlayerCar());
         world->addRacingCars(fac->createRacingCar());
+        background = make_shared<Background>(window);
+
+}
+
+void Game::printDisplayElements() {
+        // draw extra display elements
+        sf::Font font;
+        font.loadFromFile("../font/Arial.ttf");
+
+        sf::Text dist;
+        dist.setFont(font);
+        dist.setString("distance: " + to_string(static_cast<int>(distance)));
+        dist.setCharacterSize(20);
+        dist.setPosition(430, 350);
+
+        sf::Text scr;
+        scr.setFont(font);
+        scr.setString("score: " + to_string(static_cast<int>(score)));
+        scr.setCharacterSize(20);
+        scr.setPosition(430, 375);
+
+        window->draw(dist);
+        window->draw(scr);
+}
+
+void Game::finish() {
+        if (!world->finish()) {
+                cout << "ENDING" << endl;
+        } else {
+                endGame();
+        }
+
+        printDisplayElements();
+}
+
+void Game::endGame() {
+exit(10);
+}
+
+void Game::update() {
+        world->update(0, {});
+
+        if (distance > 100 && abs(prevLoadDist - distance) > 30) {
+                float chance = ((100 + distance / 50) * (world->getSpeed() / 450)) / 10;
+                //            cout << chance << endl;
+                if (Random::getInstance()->chance(chance / 160)) {
+                        world->addEntity(fac->createPassingCar());
+                        prevLoadDist = distance;
+                }
+        }
+
+
 }

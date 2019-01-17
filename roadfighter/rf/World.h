@@ -27,12 +27,13 @@ public:
 
         void setPlayer(const shared_ptr<Entity>& player);
         void addEntity(const shared_ptr<Entity>& object);
-    void addRacingCars(const shared_ptr<Entity>& passingCar);
+        void addRacingCars(const shared_ptr<Entity>& passingCar);
 
-
-    // functions
+        // functions
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
+
+        bool finish() override;
 
         float getSpeed() override;
         bool toDelete() override;

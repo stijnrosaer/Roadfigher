@@ -18,6 +18,7 @@ private:
         shared_ptr<roadfighter::Factory> fac;
         shared_ptr<sf::RenderWindow> window;
         shared_ptr<roadfighter::World> world;
+        shared_ptr<Background> background;
 
         float distance;
         float prevLoadDist;
@@ -29,8 +30,13 @@ public:
 
         virtual ~Game();
 
-        void run();
-        void initialize();
+    void initialize();
+
+    void run();
+    void update();
+        void finish();
+        void printDisplayElements();
+        void endGame();
 
         void react(action act) override;
 };

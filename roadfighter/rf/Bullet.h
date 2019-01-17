@@ -25,6 +25,8 @@ public:
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
+        bool finish() override;
+
         void setLoc(location loc);
 
         float getSpeed() override;

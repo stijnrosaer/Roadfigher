@@ -7,23 +7,29 @@
 
 roadfighter::PassingCar::PassingCar()
 {
-        int l = Random::getInstance()->random(0, 4);
+        int l = Random::getInstance()->random(0, 6);
         float xloc;
         switch (l) {
         case 0:
-                xloc = -1;
+                xloc = static_cast<float>(-1.2);
                 break;
         case 1:
-                xloc = static_cast<float>(-0.5);
+                xloc = static_cast<float>(-0.7);
                 break;
         case 2:
-                xloc = 0;
+                xloc = static_cast<float>(-0.2);
                 break;
         case 3:
-                xloc = 0.5;
+                xloc = 0.2;
                 break;
         case 4:
+                xloc = 0.5;
+                break;
+        case 5:
                 xloc = 1;
+                break;
+        case 6:
+                xloc = 1.2;
                 break;
         default:
                 xloc = 0;
@@ -72,3 +78,8 @@ void roadfighter::PassingCar::setLoc(location loc)
 }
 
 void roadfighter::PassingCar::movePassingCar() { setLoc({bounds.tlLoc.x, bounds.tlLoc.y + relativeSpeed * 0.0005}); }
+
+bool roadfighter::PassingCar::finish() {
+        this->speed += 5;
+        return bounds.loc.y > 4;
+}

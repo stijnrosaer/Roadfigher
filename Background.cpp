@@ -23,6 +23,7 @@ Background::Background(std::shared_ptr<sf::RenderWindow> window)
 
 void Background::update(std::shared_ptr<sf::RenderWindow> window, float move)
 {
+        move = static_cast<float>((15.0 * move) / 350);
         if (bgY < window->getView().getSize().y) {
                 bgY -= move;
         } else {
