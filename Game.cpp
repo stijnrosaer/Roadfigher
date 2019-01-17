@@ -95,7 +95,7 @@ Game::Game()
         distance = 0;
         score = 0;
         prevLoadDist = 100;
-        finishDistance = 500;
+        finishDistance = 5000;
         highscore = 0;
 }
 
