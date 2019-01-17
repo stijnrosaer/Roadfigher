@@ -12,7 +12,6 @@ roadfighter::Entity::boundaries roadfighter::Entity::getBounds() { return this->
 
 shared_ptr<roadfighter::Entity> roadfighter::Entity::collision(vector<shared_ptr<roadfighter::Entity>> entities)
 {
-        bool collision = false;
         for (auto& item : entities) {
                 // top left collides
                 if (this->bounds.tlLoc.x > item->getBounds().tlLoc.x &&

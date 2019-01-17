@@ -12,15 +12,11 @@ class Background
 {
 private:
         sf::Texture bgTexture1;
-        sf::Texture bgTexture2;
-
         sf::Sprite bgSprite1;
-        sf::Sprite bgSprite2;
-
-        sf::RectangleShape bgShape;
+        sf::Texture finishTexture;
+        sf::Sprite finishSprite;
 
         float bgY;
-        float bgY2;
 
 public:
         Background();
@@ -29,6 +25,7 @@ public:
 
         void update(std::shared_ptr<sf::RenderWindow> window, float move);
         void draw(std::shared_ptr<sf::RenderWindow> window);
+        void finish(float move);
 };
 
 #endif // PROJECTGP_BACKGROUND_H

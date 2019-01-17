@@ -110,14 +110,14 @@ void roadfighter::PlayerCar::movePlayerCar(roadfighter::PlayerCar::direction dir
         }
 }
 
-bool roadfighter::PlayerCar::finish() {
-        if (speed > 0){
+bool roadfighter::PlayerCar::finish()
+{
+        if (speed > 0) {
                 speed -= 5;
-                if (speed < 0){
+                if (speed < 0) {
                         speed = 0;
                 }
                 return false;
         }
         return true;
-
 }

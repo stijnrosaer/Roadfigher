@@ -79,7 +79,8 @@ void roadfighter::PassingCar::setLoc(location loc)
 
 void roadfighter::PassingCar::movePassingCar() { setLoc({bounds.tlLoc.x, bounds.tlLoc.y + relativeSpeed * 0.0005}); }
 
-bool roadfighter::PassingCar::finish() {
+bool roadfighter::PassingCar::finish()
+{
         this->speed += 5;
         return bounds.loc.y > 4;
 }

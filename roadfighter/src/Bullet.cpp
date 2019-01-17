@@ -53,6 +53,4 @@ void roadfighter::Bullet::update(float speed, vector<shared_ptr<roadfighter::Ent
 
 void roadfighter::Bullet::moveBullet() { setLoc({bounds.tlLoc.x, bounds.tlLoc.y + relativeSpeed * 0.0005}); }
 
-bool roadfighter::Bullet::finish() {
-        return this->bounds.loc.y > 4;
-}
+bool roadfighter::Bullet::finish() { return this->bounds.loc.y > 4; }

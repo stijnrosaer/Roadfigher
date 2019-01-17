@@ -73,24 +73,25 @@ void roadfighter::World::addRacingCars(const shared_ptr<roadfighter::Entity>& pa
         racingCars.push_back(passingCar);
 }
 
-bool roadfighter::World::finish() {
+bool roadfighter::World::finish()
+{
         vector<shared_ptr<Entity>> allItems;
         allItems.insert(allItems.end(), this->entities.begin(), this->entities.end());
         allItems.insert(allItems.end(), this->racingCars.begin(), this->racingCars.end());
 
         bool ready = true;
-        for(auto &entity : entities){
-                if (!entity->finish()){
-                       ready = false;
-                       entity->update(speed, allItems);
+        for (auto& entity : entities) {
+                if (!entity->finish()) {
+                        ready = false;
+                        entity->update(speed, allItems);
                 }
         }
-        for (auto &racingCar : racingCars){
-                if (!racingCar->finish()){
+        for (auto& racingCar : racingCars) {
+                if (!racingCar->finish()) {
                         ready = false;
                 }
         }
-        if(!player->finish()){
+        if (!player->finish()) {
                 this->speed = player->getSpeed();
                 ready = false;
         }

@@ -42,7 +42,7 @@ void roadfighter::RacingCar::update(float speed, vector<shared_ptr<roadfighter::
                                 if (this->speed > 200) {
                                         this->speed -= 5;
                                 }
-                        }else if (Random::getInstance()->chance(0.10)) {
+                        } else if (Random::getInstance()->chance(0.10)) {
                                 if (this->speed < 500) {
                                         this->speed += 5;
                                 }
@@ -120,10 +120,11 @@ void roadfighter::RacingCar::setLoc(const location loc)
         this->bounds.brLoc = {loc.x + bounds.width, loc.y - bounds.height};
 }
 
-bool roadfighter::RacingCar::finish() {
-        if (speed > 0){
+bool roadfighter::RacingCar::finish()
+{
+        if (speed > 0) {
                 speed -= 5;
-                if (speed < 0){
+                if (speed < 0) {
                         speed = 0;
                 }
                 return false;
