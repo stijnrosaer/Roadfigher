@@ -33,6 +33,7 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
 {
         if (collision(entities)) {
                 collision(entities)->setDelete(true);
+                // todo: collision(entities)->hitByPlayer();
                 exploding++;
                 if (this->speed > 0) {
                         this->speed -= 30;

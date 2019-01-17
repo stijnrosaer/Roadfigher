@@ -2,8 +2,8 @@
 // Created by stijn on 16/11/18.
 //
 
-#ifndef PROJECTGP_PASSINGCARSFML_H
-#define PROJECTGP_PASSINGCARSFML_H
+#ifndef PROJECTGP_PASSINGPOINTSCARSFML_H
+#define PROJECTGP_PASSINGPOINTSCARSFML_H
 
 #include "SFML/Graphics.hpp"
 #include "rf/PassingCar.h"
@@ -25,7 +25,9 @@ public:
 
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
+
+        void setDelete(bool del) override;
 };
 } // namespace roadfighterSFML
 
-#endif // PROJECTGP_PASSINGCARSFML_H
+#endif // PROJECTGP_PASSINGPOINTSCARSFML_H

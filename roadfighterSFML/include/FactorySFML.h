@@ -22,6 +22,9 @@ public:
 
         shared_ptr<roadfighter::Entity> createPlayerCar() override;
         shared_ptr<roadfighter::Entity> createPassingCar() override;
+
+        shared_ptr<roadfighter::Entity> createPassingPointsCar() override;
+
         shared_ptr<roadfighter::Entity> createBullet(location loc) override;
         shared_ptr<roadfighter::Entity> createRacingCar() override;
 };

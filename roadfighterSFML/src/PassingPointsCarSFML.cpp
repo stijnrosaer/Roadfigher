@@ -10,7 +10,7 @@ roadfighterSFML::PassingPointsCar::PassingPointsCar(shared_ptr<sf::RenderWindow>
 {
         this->addObserver(std::move(game));
         this->window = std::move(window);
-        this->texture.loadFromFile("../img/passing_car.png");
+        this->texture.loadFromFile("../img/special_car.png");
         sprite.setTexture(texture);
         sprite.scale(2.2f, 2.2f);
 }
@@ -29,6 +29,6 @@ void roadfighterSFML::PassingPointsCar::update(float speed, vector<shared_ptr<En
         movePassingCar();
 }
 
-roadfighterSFML::PassingPointsCar::~PassingPointsCar(){
+roadfighterSFML::PassingPointsCar::~PassingPointsCar() {}
 
-};
+void roadfighterSFML::PassingPointsCar::setDelete(bool del) { this->del = del; };

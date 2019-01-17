@@ -68,8 +68,6 @@ bool roadfighter::PassingCar::toDelete()
         return del;
 }
 
-void roadfighter::PassingCar::setDelete(bool del) { this->del = del; }
-
 void roadfighter::PassingCar::setLoc(location loc)
 {
         this->bounds.tlLoc = loc;

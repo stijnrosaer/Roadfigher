@@ -33,7 +33,8 @@ public:
 
         void setLoc(location loc);
         float getSpeed() override;
-        void setDelete(bool del) override;
+
+        void setDelete(bool del) override = 0;
         bool toDelete() override;
 };
 } // namespace roadfighter

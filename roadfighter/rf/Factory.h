@@ -17,6 +17,7 @@ public:
 
         virtual std::shared_ptr<roadfighter::Entity> createPlayerCar() = 0;
         virtual std::shared_ptr<roadfighter::Entity> createPassingCar() = 0;
+        virtual std::shared_ptr<roadfighter::Entity> createPassingPointsCar() = 0;
         virtual std::shared_ptr<roadfighter::Entity> createBullet(location loc) = 0;
         virtual std::shared_ptr<roadfighter::Entity> createRacingCar() = 0;
 };

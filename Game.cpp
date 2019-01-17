@@ -257,8 +257,12 @@ void Game::update()
         if (distance > 100 && abs(prevLoadDist - distance) > 30) {
                 float chance = ((100 + distance / 50) * (world->getSpeed() / 450)) / 10;
                 //            cout << chance << endl;
-                if (Random::getInstance()->chance(chance / 160)) {
-                        world->addEntity(fac->createPassingCar());
+                if (Random::getInstance()->chance(chance / 100)) {
+                        if (Random::getInstance()->chance(0.15)) {
+                                world->addEntity(fac->createPassingPointsCar());
+                        } else {
+                                world->addEntity(fac->createPassingCar());
+                        }
                         prevLoadDist = distance;
                 }
         }

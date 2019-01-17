@@ -5,6 +5,7 @@
 #include "../include/FactorySFML.h"
 #include "../include/BulletSFML.h"
 #include "../include/PassingCarSFML.h"
+#include "../include/PassingPointsCarSFML.h"
 #include "../include/PlayerCarSFML.h"
 #include "../include/RacingCarSFML.h"
 
@@ -34,4 +35,9 @@ shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createBullet(location 
 shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createRacingCar()
 {
         return make_shared<roadfighterSFML::RacingCar>(this->window);
+}
+
+shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPassingPointsCar()
+{
+        return make_shared<roadfighterSFML::PassingPointsCar>(this->window, this->game);
 }

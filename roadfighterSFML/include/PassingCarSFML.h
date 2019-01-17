@@ -25,6 +25,8 @@ public:
 
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
+
+        void setDelete(bool del) override;
 };
 } // namespace roadfighterSFML
 
