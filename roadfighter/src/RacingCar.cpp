@@ -3,6 +3,7 @@
 //
 
 #include "../rf/RacingCar.h"
+#include "../rf/Observer.h"
 
 roadfighter::RacingCar::RacingCar()
 {

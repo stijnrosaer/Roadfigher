@@ -6,9 +6,10 @@
 #define PROJECTGP_PASSINGCAR_H
 
 #include "Entity.h"
+#include "Observable.h"
 
 namespace roadfighter {
-class PassingCar : public roadfighter::Entity
+class PassingCar : public roadfighter::Entity, public Observable
 {
 protected:
         float speed;

@@ -63,7 +63,7 @@ void Game::run()
                         stopTime = chrono::high_resolution_clock::now();
                         elapsed = stopTime - startTime;
                 }
-                if (score>highscore){
+                if (score > highscore) {
                         highscore = static_cast<int>(score);
                 }
         }
@@ -183,7 +183,7 @@ void Game::endGame()
                         name += "\n";
                         outscore += to_string(item.second);
                         outscore += "\n";
-                        counter --;
+                        counter--;
                 } else {
                         break;
                 }

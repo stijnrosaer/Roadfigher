@@ -10,7 +10,7 @@
 #include <rf/Observer.h>
 
 namespace roadfighterSFML {
-class PassingCar : public roadfighter::PassingCar
+class PassingPointsCar : public roadfighter::PassingCar
 {
 private:
         location pixloc;
@@ -19,9 +19,9 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
-        PassingCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game);
+        PassingPointsCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game);
 
-        virtual ~PassingCar();
+        virtual ~PassingPointsCar();
 
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;

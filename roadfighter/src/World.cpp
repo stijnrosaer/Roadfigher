@@ -58,15 +58,15 @@ bool roadfighter::World::toDelete()
 
 void roadfighter::World::remCollisions()
 {
-    vector<shared_ptr<Entity>> allItems;
-    allItems.insert(allItems.end(), this->entities.begin(), this->entities.end());
-    allItems.insert(allItems.end(), this->racingCars.begin(), this->racingCars.end());
+        vector<shared_ptr<Entity>> allItems;
+        allItems.insert(allItems.end(), this->entities.begin(), this->entities.end());
+        allItems.insert(allItems.end(), this->racingCars.begin(), this->racingCars.end());
 
         for (auto& item : entities) {
                 if (item->collision(allItems) != nullptr) {
                         item->setDelete(true);
-                        if(item->collision(entities)){
-                            item->collision(entities)->setDelete(true);
+                        if (item->collision(entities)) {
+                                item->collision(entities)->setDelete(true);
                         }
                 }
         }

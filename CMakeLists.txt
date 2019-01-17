@@ -23,7 +23,7 @@ SET(SRC main.cpp
         roadfighterSFML/src/PlayerCarSFML.cpp roadfighterSFML/include/PlayerCarSFML.h
         roadfighterSFML/src/RacingCarSFML.cpp roadfighterSFML/include/RacingCarSFML.h
         roadfighterSFML/src/PassingCarSFML.cpp roadfighterSFML/include/PassingCarSFML.h
-        roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h Singleton.cpp Singleton.h Background.cpp Background.h)
+        roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h Singleton.cpp Singleton.h Background.cpp Background.h roadfighterSFML/include/PassingPointsCarSFML.h roadfighterSFML/src/PassingPointsCarSFML.cpp)
 
 # Add rf dirs for SFML
 # (The SFML_INCLUDE_DIR variable is defined by FindcSFML.cmake, if SFML was found)

@@ -17,7 +17,7 @@ shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPlayerCar()
 
 shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPassingCar()
 {
-        return make_shared<roadfighterSFML::PassingCar>(this->window);
+        return make_shared<roadfighterSFML::PassingCar>(this->window, this->game);
 }
 
 roadfighterSFML::Factory::Factory(shared_ptr<sf::RenderWindow> w, shared_ptr<Observer> g)

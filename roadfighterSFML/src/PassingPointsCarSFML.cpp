@@ -4,9 +4,9 @@
 // Created by stijn on 16/11/18.
 //
 
-#include "../include/PassingCarSFML.h"
+#include "../include/PassingPointsCarSFML.h"
 
-roadfighterSFML::PassingCar::PassingCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game)
+roadfighterSFML::PassingPointsCar::PassingPointsCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game)
 {
         this->addObserver(std::move(game));
         this->window = std::move(window);
@@ -15,7 +15,7 @@ roadfighterSFML::PassingCar::PassingCar(shared_ptr<sf::RenderWindow> window, sha
         sprite.scale(2.2f, 2.2f);
 }
 
-void roadfighterSFML::PassingCar::draw()
+void roadfighterSFML::PassingPointsCar::draw()
 {
         pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x,
                                                                this->window->getView().getSize().y);
@@ -23,12 +23,12 @@ void roadfighterSFML::PassingCar::draw()
         window->draw(sprite);
 }
 
-void roadfighterSFML::PassingCar::update(float speed, vector<shared_ptr<Entity>> entities)
+void roadfighterSFML::PassingPointsCar::update(float speed, vector<shared_ptr<Entity>> entities)
 {
         roadfighter::PassingCar::update(speed, entities);
         movePassingCar();
 }
 
-roadfighterSFML::PassingCar::~PassingCar(){
+roadfighterSFML::PassingPointsCar::~PassingPointsCar(){
 
 };
