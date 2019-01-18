@@ -18,12 +18,12 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
-    /**
-     * constructor voor een bullet
-     * @param window window waar op te tekenen
-     * @param loc locatie van de bullet
-     * @param game game waaruit het opgeroepen wordt
-     */
+        /**
+         * constructor voor een bullet
+         * @param window window waar op te tekenen
+         * @param loc locatie van de bullet
+         * @param game game waaruit het opgeroepen wordt
+         */
         Bullet(shared_ptr<sf::RenderWindow> window, location loc, shared_ptr<Observer> game);
         /**
          * teken de bullet
