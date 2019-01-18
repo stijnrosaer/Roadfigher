@@ -1,5 +1,5 @@
-#include "Game.h"
-#include "Transformation.h"
+#include "game/include/Game.h"
+#include "utils/include/Transformation.h"
 #include <iostream>
 
 using namespace std;

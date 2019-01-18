@@ -6,11 +6,11 @@
 #define PROJECTGP_GAME_H
 
 #include "Background.h"
-#include "Random.h"
-#include "json.hpp"
+#include "../../utils/include/Random.h"
+#include "../../utils/include/json.hpp"
 #include "rf/Factory.h"
 #include "rf/World.h"
-#include "roadfighterSFML/include/PlayerCarSFML.h"
+#include "../../roadfighterSFML/include/PlayerCarSFML.h"
 #include <rf/Observer.h>
 
 using json = nlohmann::json;

@@ -5,8 +5,8 @@
 #ifndef PROJECTGP_ENTITY_H
 #define PROJECTGP_ENTITY_H
 
-#include "../../Random.h"
-#include "../../Transformation.h"
+#include "../../utils/include/Random.h"
+#include "../../utils/include/Transformation.h"
 #include <iostream>
 #include <memory>
 #include <vector>

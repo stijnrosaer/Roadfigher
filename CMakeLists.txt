@@ -17,13 +17,13 @@ FIND_PACKAGE(SFML 2 COMPONENTS system window graphics)
 
 # The source files to compile
 SET(SRC main.cpp
-        Random.cpp Random.h
-        Transformation.cpp Transformation.h
-        Game.cpp Game.h
+        utils/src/Random.cpp utils/include/Random.h
+        utils/src/Transformation.cpp utils/include/Transformation.h
+        game/src/Game.cpp game/include/Game.h
         roadfighterSFML/src/PlayerCarSFML.cpp roadfighterSFML/include/PlayerCarSFML.h
         roadfighterSFML/src/RacingCarSFML.cpp roadfighterSFML/include/RacingCarSFML.h
         roadfighterSFML/src/PassingCarSFML.cpp roadfighterSFML/include/PassingCarSFML.h
-        roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h Singleton.cpp Singleton.h Background.cpp Background.h roadfighterSFML/include/PassingPointsCarSFML.h roadfighterSFML/src/PassingPointsCarSFML.cpp)
+        roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h utils/src/Singleton.cpp utils/include/Singleton.h game/src/Background.cpp game/include/Background.h roadfighterSFML/include/PassingPointsCarSFML.h roadfighterSFML/src/PassingPointsCarSFML.cpp)
 
 # Add rf dirs for SFML
 # (The SFML_INCLUDE_DIR variable is defined by FindcSFML.cmake, if SFML was found)

@@ -2,7 +2,7 @@
 // Created by stijn on 15/11/18.
 //
 
-#include "Random.h"
+#include "../include/Random.h"
 #include <ctime>
 #include <random>
 

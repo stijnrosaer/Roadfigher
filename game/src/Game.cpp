@@ -2,8 +2,8 @@
 // Created by stijn on 16/11/18.
 //
 
-#include "Game.h"
-#include "roadfighterSFML/include/FactorySFML.h"
+#include "../include/Game.h"
+#include "../../roadfighterSFML/include/FactorySFML.h"
 #include <chrono>
 #include <fstream>
 #include <thread>

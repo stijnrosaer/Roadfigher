@@ -2,7 +2,7 @@
 // Created by stijn on 13/12/18.
 //
 
-#include "Background.h"
+#include "../include/Background.h"
 #include <iostream>
 
 Background::Background(std::shared_ptr<sf::RenderWindow> window)

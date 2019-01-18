@@ -5,7 +5,7 @@
 #ifndef PROJECTGP_FACTORY_SFML_H
 #define PROJECTGP_FACTORY_SFML_H
 
-#include "../../Game.h"
+#include "../../game/include/Game.h"
 #include "rf/Factory.h"
 
 namespace roadfighterSFML {
