@@ -34,18 +34,47 @@ private:
         int highscore;
 
 public:
+    /**
+     * constructor voor het aanmaken van een game
+     */
         Game();
-
+        /**
+         * destructor van een game
+         */
         virtual ~Game();
 
+        /**
+         * initialiseer een game en maak en world aan
+         * de world zal de nodige elementen krijgen om te starte
+         * background wordt aangemaakt
+         */
         void initialize();
 
+        /**
+         * run het programma, van hieruit worden andere functies aangeroepen
+         */
         void run();
+        /**
+         * update alle elementen uit world en de background
+         */
         void update();
+        /**
+         * finish het spel door input niet meer te gaan accepteren en de finishlijn naar voor te laten komen
+         */
         void finish();
+        /**
+         * print de scherm elementen score, distance en highscore tijdens het spel
+         */
         void printDisplayElements();
+        /**
+         * eindig het spel en toon eens scherm voor je score op te slagen en het scorebord te bekijken
+         */
         void endGame();
 
+        /**
+         * reageer op observables voor punten en aanmaken van bullets
+         * @param act actie die te ondernemen isf
+         */
         void react(action act) override;
 };
 
