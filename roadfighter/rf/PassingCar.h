@@ -17,6 +17,9 @@ protected:
 
         bool del;
 
+        /**
+         * beweeg de passingCar op het speelveld
+         */
         void movePassingCar();
 
 public:

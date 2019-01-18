@@ -29,6 +29,7 @@ protected:
         int waitForShoot;
 
         bool del;
+
         void movePlayerCar(direction dir);
 
 public:
