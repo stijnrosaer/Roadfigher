@@ -6,11 +6,10 @@
 #define PROJECTGP_PASSINGPOINTSCARSFML_H
 
 #include "SFML/Graphics.hpp"
-#include "rf/PassingCar.h"
-#include <rf/Observer.h>
+#include <rf/PassingPointsCar.h>
 
 namespace roadfighterSFML {
-class PassingPointsCar : public roadfighter::PassingCar
+class PassingPointsCar : public roadfighter::PassingPointsCar
 {
 private:
         location pixloc;
@@ -20,14 +19,8 @@ private:
 
 public:
         PassingPointsCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game);
-
-        virtual ~PassingPointsCar();
-
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
-
-        bool playerNoRespawn() override;
-
         void setDelete(bool del) override;
 };
 } // namespace roadfighterSFML

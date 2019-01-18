@@ -4,18 +4,17 @@
 // Created by stijn on 16/11/18.
 //
 
-#include "../include/PassingCarSFML.h"
+#include "../include/PassingNormalCarSFML.h"
 
-roadfighterSFML::PassingCar::PassingCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game)
+roadfighterSFML::PassingNormalCar::PassingNormalCar(shared_ptr<sf::RenderWindow> window)
 {
-        this->addObserver(std::move(game));
         this->window = std::move(window);
         this->texture.loadFromFile("../img/passing_car.png");
         sprite.setTexture(texture);
         sprite.scale(2.2f, 2.2f);
 }
 
-void roadfighterSFML::PassingCar::draw()
+void roadfighterSFML::PassingNormalCar::draw()
 {
         pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x,
                                                                this->window->getView().getSize().y);
@@ -23,14 +22,10 @@ void roadfighterSFML::PassingCar::draw()
         window->draw(sprite);
 }
 
-void roadfighterSFML::PassingCar::update(float speed, vector<shared_ptr<Entity>> entities)
+void roadfighterSFML::PassingNormalCar::update(float speed, vector<shared_ptr<Entity>> entities)
 {
         roadfighter::PassingCar::update(speed, entities);
         movePassingCar();
 }
 
-roadfighterSFML::PassingCar::~PassingCar() {}
-
-void roadfighterSFML::PassingCar::setDelete(bool del) { this->del = del; }
-
-bool roadfighterSFML::PassingCar::playerNoRespawn() { return false; };
+void roadfighterSFML::PassingNormalCar::setDelete(bool del) { this->del = del; }

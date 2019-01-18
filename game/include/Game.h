@@ -34,9 +34,9 @@ private:
         int highscore;
 
 public:
-    /**
-     * constructor voor het aanmaken van een game
-     */
+        /**
+         * constructor voor het aanmaken van een game
+         */
         Game();
         /**
          * destructor van een game

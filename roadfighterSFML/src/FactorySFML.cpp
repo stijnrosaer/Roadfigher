@@ -4,7 +4,7 @@
 
 #include "../include/FactorySFML.h"
 #include "../include/BulletSFML.h"
-#include "../include/PassingCarSFML.h"
+#include "../include/PassingNormalCarSFML.h"
 #include "../include/PassingPointsCarSFML.h"
 #include "../include/PlayerCarSFML.h"
 #include "../include/RacingCarSFML.h"
@@ -18,7 +18,7 @@ shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPlayerCar()
 
 shared_ptr<roadfighter::Entity> roadfighterSFML::Factory::createPassingCar()
 {
-        return make_shared<roadfighterSFML::PassingCar>(this->window, this->game);
+        return make_shared<roadfighterSFML::PassingNormalCar>(this->window);
 }
 
 roadfighterSFML::Factory::Factory(shared_ptr<sf::RenderWindow> w, shared_ptr<Observer> g)

@@ -2,15 +2,15 @@
 // Created by stijn on 16/11/18.
 //
 
-#ifndef PROJECTGP_PASSINGCARSFML_H
-#define PROJECTGP_PASSINGCARSFML_H
+#ifndef PROJECTGP_PASSINGNORMALCARSFML_H
+#define PROJECTGP_PASSINGNORMALCARSFML_H
 
 #include "SFML/Graphics.hpp"
-#include "rf/PassingCar.h"
 #include <rf/Observer.h>
+#include <rf/PassingNormalCar.h>
 
 namespace roadfighterSFML {
-class PassingCar : public roadfighter::PassingCar
+class PassingNormalCar : public roadfighter::PassingNormalCar
 {
 private:
         location pixloc;
@@ -19,17 +19,13 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
-        PassingCar(shared_ptr<sf::RenderWindow> window, shared_ptr<Observer> game);
-
-        virtual ~PassingCar();
+        explicit PassingNormalCar(shared_ptr<sf::RenderWindow> window);
 
         void draw() override;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
-
-        bool playerNoRespawn() override;
 
         void setDelete(bool del) override;
 };
 } // namespace roadfighterSFML
 
-#endif // PROJECTGP_PASSINGCARSFML_H
+#endif // PROJECTGP_PASSINGNORMALCARSFML_H

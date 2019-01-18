@@ -22,7 +22,7 @@ SET(SRC main.cpp
         game/src/Game.cpp game/include/Game.h
         roadfighterSFML/src/PlayerCarSFML.cpp roadfighterSFML/include/PlayerCarSFML.h
         roadfighterSFML/src/RacingCarSFML.cpp roadfighterSFML/include/RacingCarSFML.h
-        roadfighterSFML/src/PassingCarSFML.cpp roadfighterSFML/include/PassingCarSFML.h
+        roadfighterSFML/src/PassingNormalCarSFML.cpp roadfighterSFML/include/PassingNormalCarSFML.h
         roadfighterSFML/src/BulletSFML.cpp roadfighterSFML/include/BulletSFML.h roadfighterSFML/src/FactorySFML.cpp roadfighterSFML/include/FactorySFML.h utils/src/Singleton.cpp utils/include/Singleton.h game/src/Background.cpp game/include/Background.h roadfighterSFML/include/PassingPointsCarSFML.h roadfighterSFML/src/PassingPointsCarSFML.cpp)
 
 # Add rf dirs for SFML

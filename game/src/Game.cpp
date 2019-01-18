@@ -256,7 +256,8 @@ void Game::endGame()
                                 } else if (event.text.unicode == 8 && !playerInput.empty()) {
                                         playerInput.pop_back();
                                         playerText.setString(playerInput);
-                                } else if (event.text.unicode < 127 && event.text.unicode > 31 && playerInput.size() < 15) {
+                                } else if (event.text.unicode < 127 && event.text.unicode > 31 &&
+                                           playerInput.size() < 15) {
                                         playerInput += static_cast<char>(event.text.unicode);
                                         playerText.setString(playerInput);
                                 }
