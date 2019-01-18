@@ -18,8 +18,22 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
+    /**
+     * constructor voor een bullet
+     * @param window window waar op te tekenen
+     * @param loc locatie van de bullet
+     * @param game game waaruit het opgeroepen wordt
+     */
         Bullet(shared_ptr<sf::RenderWindow> window, location loc, shared_ptr<Observer> game);
+        /**
+         * teken de bullet
+         */
         void draw() override;
+        /**
+         * update de bullet
+         * @param speed snelheid van de player
+         * @param entities enitities waarmee rekening gehouden moet worden
+         */
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 };
 } // namespace roadfighterSFML
