@@ -28,5 +28,3 @@ void roadfighterSFML::PassingPointsCar::update(float speed, vector<shared_ptr<En
         roadfighter::PassingCar::update(speed, entities);
         movePassingCar();
 }
-
-void roadfighterSFML::PassingPointsCar::setDelete(bool del) { this->del = del; }

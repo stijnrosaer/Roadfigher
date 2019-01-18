@@ -82,3 +82,5 @@ bool roadfighter::PassingCar::finish()
         this->speed += 5;
         return bounds.loc.y > 4;
 }
+
+void roadfighter::PassingCar::setDelete(bool del) { this->del = del; }

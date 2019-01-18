@@ -19,12 +19,22 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
+        /**
+         * constructor passingNormalCar
+         * @param window window waar op getekend moet worden
+         */
         explicit PassingNormalCar(shared_ptr<sf::RenderWindow> window);
 
+        /**
+         * teken de passingNormalCar op de window
+         */
         void draw() override;
+        /**
+         * update wat nodig
+         * @param speed snelheid van de speler
+         * @param entities entities waarmee rekening te houden
+         */
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
-
-        void setDelete(bool del) override;
 };
 } // namespace roadfighterSFML
 

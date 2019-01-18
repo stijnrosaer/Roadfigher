@@ -18,8 +18,20 @@ private:
         shared_ptr<sf::RenderWindow> window;
 
 public:
-        RacingCar(shared_ptr<sf::RenderWindow> window);
+        /**
+         * constructor racingCar
+         * @param window window waar op te tekenen
+         */
+        explicit RacingCar(shared_ptr<sf::RenderWindow> window);
+        /**
+         * teken racing car op window
+         */
         void draw() override;
+        /**
+         * update de parameters van racingCar
+         * @param speed snelheid van de player
+         * @param entities entities waarmee rekening te houden
+         */
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 };
 } // namespace roadfighterSFML

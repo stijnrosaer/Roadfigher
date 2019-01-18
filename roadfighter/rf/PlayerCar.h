@@ -7,7 +7,6 @@
 
 #include "Entity.h"
 #include "Observable.h"
-#include "World.h"
 
 namespace roadfighter {
 class PlayerCar : public roadfighter::Entity, public Observable

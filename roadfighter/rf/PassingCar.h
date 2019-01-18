@@ -68,7 +68,7 @@ public:
          * zet of de passing car verwijderd mag worden
          * @param del true als het verwijderd moet worden
          */
-        void setDelete(bool del) override = 0;
+        void setDelete(bool del) override;
         /**
          * vraag op of de passingCar verwijderd moet worden
          * @return true als te verwijderen

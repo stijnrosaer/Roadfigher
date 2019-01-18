@@ -160,7 +160,12 @@ void Game::printDisplayElements()
         sf::Text highScore;
         highScore.setFont(font);
         if (scoreboardMap[0].first != "~Game~") {
-                highScore.setString("highscore: \n\n" + to_string(this->highscore) + "\n" + scoreboardMap[0].first);
+                if (highscore == scoreboardMap[0].second) {
+                        highScore.setString("highscore: \n\n" + to_string(this->highscore) + "\n" +
+                                            scoreboardMap[0].first);
+                } else {
+                        highScore.setString("highscore: \n\n" + to_string(this->highscore));
+                }
         } else {
                 highScore.setString("highscore: \n\n" + to_string(this->highscore));
         }
@@ -277,13 +282,13 @@ void Game::update()
         world->update(0, {});
 
         if (distance > 100 && abs(prevLoadDist - distance) > 30) {
-                float chance = ((150 + distance / 40) * (world->getSpeed() / 460)) / 5;
+                float chance = ((150 + distance / 40) * (world->getSpeed() / 500)) / 5;
                 //            cout << chance << endl;
                 if (Random::getInstance()->chance(chance / 100)) {
                         if (Random::getInstance()->chance(0.10)) {
                                 world->addEntity(fac->createPassingPointsCar());
                         } else {
-                                world->addEntity(fac->createPassingCar());
+                                world->addEntity(fac->createPassingNormalCar());
                         }
                         prevLoadDist = distance;
                 }

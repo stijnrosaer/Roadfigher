@@ -35,7 +35,7 @@ public:
          * maake een passingCar aan
          * @return shared entity pointer naar een sfml passingCar
          */
-        shared_ptr<roadfighter::Entity> createPassingCar() override;
+        shared_ptr<roadfighter::Entity> createPassingNormalCar() override;
         /**
          * maak een passingPointsCar aan
          * @return shared entity pointer naar een sfml passingPointsCar

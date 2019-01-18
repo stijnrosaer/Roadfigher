@@ -22,7 +22,7 @@ public:
          * maak een passingCar aan
          * @return shared entity pointer naar een passingCar
          */
-        virtual std::shared_ptr<roadfighter::Entity> createPassingCar() = 0;
+        virtual std::shared_ptr<roadfighter::Entity> createPassingNormalCar() = 0;
         /**
          * maak een passingPointsCar aan
          * @return shared entity pointer naar een passingPointsCar
