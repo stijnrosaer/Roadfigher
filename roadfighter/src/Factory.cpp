@@ -3,5 +3,3 @@
 //
 
 #include "../rf/Factory.h"
-
-roadfighter::Factory::~Factory() {}
