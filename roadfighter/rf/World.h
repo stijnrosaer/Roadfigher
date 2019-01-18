@@ -6,7 +6,6 @@
 #define PROJECTGP_WORLD_H
 
 #include "Entity.h"
-#include <typeinfo>
 
 namespace roadfighter {
 class World : public roadfighter::Entity
