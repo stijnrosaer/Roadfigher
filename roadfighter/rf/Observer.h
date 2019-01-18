@@ -20,6 +20,10 @@ enum action
 class Observer : public std::enable_shared_from_this<Observer>
 {
 public:
+        /**
+         * voer actie uit
+         * @param act uit te voeren actie
+         */
         virtual void react(action act) = 0;
 };
 
