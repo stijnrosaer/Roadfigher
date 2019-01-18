@@ -40,6 +40,7 @@ public:
         virtual bool toDelete() = 0;
         virtual void setDelete(bool del) = 0;
         virtual bool finish() = 0;
+        virtual bool playerNoRespawn();
 
         boundaries getBounds();
 

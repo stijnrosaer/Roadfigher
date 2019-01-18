@@ -80,6 +80,17 @@ void Game::react(action act)
                 this->score += 10;
                 break;
 
+        case pointsCar:
+                this->score += 20;
+                break;
+
+        case playerRespawn:
+                this->score -= 50;
+                if (this->score < 0){
+                        this->score = 0.0;
+                }
+                break;
+
         case mv:
                 double prevdist = distance;
                 distance += world->getSpeed() / 100;
@@ -95,7 +106,7 @@ Game::Game()
         distance = 0;
         score = 0;
         prevLoadDist = 100;
-        finishDistance = 5000;
+        finishDistance = 6000;
         highscore = 0;
 }
 
@@ -148,7 +159,11 @@ void Game::printDisplayElements()
 
         sf::Text highScore;
         highScore.setFont(font);
-        highScore.setString("highscore: \n" + to_string(this->highscore));
+        if (scoreboardMap[0].first != "~Game~") {
+                highScore.setString("highscore: \n\n" + to_string(this->highscore) + "\n" + scoreboardMap[0].first);
+        } else {
+                highScore.setString("highscore: \n\n" + to_string(this->highscore));
+        }
         highScore.setCharacterSize(20);
         highScore.setPosition(430, 100);
 
@@ -190,8 +205,7 @@ void Game::endGame()
         }
 
         shared_ptr<sf::RenderWindow> scoreWindow;
-        scoreWindow = make_shared<sf::RenderWindow>(sf::VideoMode(400, 800), "Score Board");
-
+        scoreWindow = make_shared<sf::RenderWindow>(sf::VideoMode(400, 600), "Score Board");
         sf::Font font;
         font.loadFromFile("../font/Arial.ttf");
 
@@ -213,6 +227,12 @@ void Game::endGame()
         playerText.setCharacterSize(25);
         playerText.setPosition(10, 10);
 
+        sf::Text playerScore;
+        playerScore.setFont(font);
+        playerScore.setString(to_string(static_cast<int>(score)));
+        playerScore.setCharacterSize(25);
+        playerScore.setPosition(10, 300);
+
         string playerInput;
 
         while (scoreWindow->isOpen()) {
@@ -233,7 +253,7 @@ void Game::endGame()
                                         file.close();
                                         std::this_thread::sleep_for(0.5s);
                                         scoreWindow->close();
-                                } else if (event.text.unicode == 8 && !playerInput.empty()) {
+                                } else if (event.text.unicode == 8 && !playerInput.empty() && playerInput.size() < 15) {
                                         playerInput.pop_back();
                                         playerText.setString(playerInput);
                                 } else if (event.text.unicode < 127 && event.text.unicode > 31) {
@@ -255,10 +275,10 @@ void Game::update()
         world->update(0, {});
 
         if (distance > 100 && abs(prevLoadDist - distance) > 30) {
-                float chance = ((100 + distance / 50) * (world->getSpeed() / 450)) / 10;
+                float chance = ((150 + distance / 40) * (world->getSpeed() / 460)) / 5;
                 //            cout << chance << endl;
                 if (Random::getInstance()->chance(chance / 100)) {
-                        if (Random::getInstance()->chance(0.15)) {
+                        if (Random::getInstance()->chance(0.10)) {
                                 world->addEntity(fac->createPassingPointsCar());
                         } else {
                                 world->addEntity(fac->createPassingCar());

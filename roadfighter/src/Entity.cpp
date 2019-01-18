@@ -45,4 +45,6 @@ shared_ptr<roadfighter::Entity> roadfighter::Entity::collision(vector<shared_ptr
         return nullptr;
 }
 
-void roadfighter::Entity::setBounds(const roadfighter::Entity::boundaries& bounds) { Entity::bounds = bounds; };
+void roadfighter::Entity::setBounds(const roadfighter::Entity::boundaries& bounds) { Entity::bounds = bounds; }
+
+bool roadfighter::Entity::playerNoRespawn() { return false; };

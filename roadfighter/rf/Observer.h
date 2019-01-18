@@ -12,6 +12,8 @@ enum action
 {
         shoot,
         hitByBullet,
+        pointsCar,
+        playerRespawn,
         mv
 };
 

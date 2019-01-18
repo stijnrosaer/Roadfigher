@@ -31,9 +31,15 @@ bool roadfighter::PlayerCar::toDelete() { return del; }
 
 void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::Entity>> entities)
 {
+        if (waitForShoot > 0) {
+                waitForShoot -= 1;
+        }
+
         if (collision(entities)) {
                 collision(entities)->setDelete(true);
-                // todo: collision(entities)->hitByPlayer();
+                if (collision(entities)->playerNoRespawn()) {
+                        return;
+                }
                 exploding++;
                 if (this->speed > 0) {
                         this->speed -= 30;
@@ -60,13 +66,10 @@ void roadfighter::PlayerCar::update(float speed, vector<shared_ptr<roadfighter::
                 //                        item->setDelete(true);
                 //                }
                 exploding = 0;
+                callObserver(playerRespawn);
 
                 this->speed = 0;
                 setLoc({-0.15, this->bounds.loc.y});
-        }
-
-        if (waitForShoot > 0) {
-                waitForShoot -= 1;
         }
 }
 

@@ -29,6 +29,8 @@ public:
         void draw() override = 0;
         void update(float speed, vector<shared_ptr<Entity>> entities) override;
 
+        virtual bool playerNoRespawn() override = 0;
+
         bool finish() override;
 
         void setLoc(location loc);

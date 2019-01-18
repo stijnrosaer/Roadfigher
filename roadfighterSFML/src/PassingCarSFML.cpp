@@ -31,4 +31,6 @@ void roadfighterSFML::PassingCar::update(float speed, vector<shared_ptr<Entity>>
 
 roadfighterSFML::PassingCar::~PassingCar() {}
 
-void roadfighterSFML::PassingCar::setDelete(bool del) { this->del = del; };
+void roadfighterSFML::PassingCar::setDelete(bool del) { this->del = del; }
+
+bool roadfighterSFML::PassingCar::playerNoRespawn() { return false; };

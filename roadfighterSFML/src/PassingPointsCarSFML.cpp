@@ -31,4 +31,10 @@ void roadfighterSFML::PassingPointsCar::update(float speed, vector<shared_ptr<En
 
 roadfighterSFML::PassingPointsCar::~PassingPointsCar() {}
 
-void roadfighterSFML::PassingPointsCar::setDelete(bool del) { this->del = del; };
+void roadfighterSFML::PassingPointsCar::setDelete(bool del) { this->del = del; }
+
+bool roadfighterSFML::PassingPointsCar::playerNoRespawn()
+{
+        callObserver(pointsCar);
+        return true;
+}
