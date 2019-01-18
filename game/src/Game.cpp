@@ -86,7 +86,7 @@ void Game::react(action act)
 
         case playerRespawn:
                 this->score -= 50;
-                if (this->score < 0){
+                if (this->score < 0) {
                         this->score = 0.0;
                 }
                 break;
@@ -231,7 +231,7 @@ void Game::endGame()
         playerScore.setFont(font);
         playerScore.setString(to_string(static_cast<int>(score)));
         playerScore.setCharacterSize(25);
-        playerScore.setPosition(10, 300);
+        playerScore.setPosition(300, 10);
 
         string playerInput;
 
@@ -253,10 +253,10 @@ void Game::endGame()
                                         file.close();
                                         std::this_thread::sleep_for(0.5s);
                                         scoreWindow->close();
-                                } else if (event.text.unicode == 8 && !playerInput.empty() && playerInput.size() < 15) {
+                                } else if (event.text.unicode == 8 && !playerInput.empty()) {
                                         playerInput.pop_back();
                                         playerText.setString(playerInput);
-                                } else if (event.text.unicode < 127 && event.text.unicode > 31) {
+                                } else if (event.text.unicode < 127 && event.text.unicode > 31 && playerInput.size() < 15) {
                                         playerInput += static_cast<char>(event.text.unicode);
                                         playerText.setString(playerInput);
                                 }
@@ -266,6 +266,7 @@ void Game::endGame()
                 scoreWindow->draw(printName);
                 scoreWindow->draw(printScore);
                 scoreWindow->draw(playerText);
+                scoreWindow->draw(playerScore);
                 scoreWindow->display();
         }
 }

@@ -19,12 +19,31 @@ private:
         float bgY;
 
 public:
+        /**
+         * default constructor voor Background
+         */
         Background();
+        /**
+         * constructor voor background met window waar op getekend moet worden
+         * @param window de window van het spel
+         */
+        explicit Background(std::shared_ptr<sf::RenderWindow> window);
 
-        Background(std::shared_ptr<sf::RenderWindow> window);
-
+        /**
+         * update de achtergrond door deze correct te bewegen
+         * @param window de window waar op te tekenen
+         * @param move aan welke snelheid de achtergrond bewongen moet worden
+         */
         void update(std::shared_ptr<sf::RenderWindow> window, float move);
+        /**
+         * teken de achtergrond
+         * @param window de window waar op te tekenen
+         */
         void draw(std::shared_ptr<sf::RenderWindow> window);
+        /**
+         * beweeg de finishlijn
+         * @param move aan welke snelheid de finishlijn bewogen moet worden
+         */
         void finish(float move);
 };
 
