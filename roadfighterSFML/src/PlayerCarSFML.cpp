@@ -37,7 +37,7 @@ void roadfighterSFML::PlayerCar::draw()
 {
         pixloc = Transformation::getInstance()->to2DWorldSpace(bounds.tlLoc, this->window->getView().getSize().x,
                                                                this->window->getView().getSize().y);
-        sprite.setPosition(pixloc.x, pixloc.y);
+        sprite.setPosition(static_cast<float>(pixloc.x), static_cast<float>(pixloc.y));
         window->draw(sprite);
 }
 
