@@ -10,7 +10,7 @@ void Observable::removeAllObserver() { observers.clear(); }
 
 void Observable::callObserver(action act)
 {
-        for (std::shared_ptr<Observer>&(item) : observers) {
+        for (std::shared_ptr<Observer>&item : observers) {
                 item->react(act);
         }
 }
