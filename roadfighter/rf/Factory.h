@@ -13,10 +13,10 @@ namespace roadfighter {
 class Factory
 {
 public:
-    /**
-     * maak een playerCar aan
-     * @return shared entity pointer naar een playerCar
-     */
+        /**
+         * maak een playerCar aan
+         * @return shared entity pointer naar een playerCar
+         */
         virtual std::shared_ptr<roadfighter::Entity> createPlayerCar() = 0;
         /**
          * maak een passingCar aan
