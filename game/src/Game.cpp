@@ -124,7 +124,7 @@ void Game::initialize()
         sort(scoreboardMap.begin(), scoreboardMap.end(),
              [](const pair<string, int>& lhs, const pair<string, int>& rhs) -> bool {
                      if (lhs.second == 0)
-                             return true;
+                             return false;
                      return lhs.second > rhs.second;
              });
 
