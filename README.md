@@ -1,7 +1,7 @@
 # projectGP [![Build Status](https://travis-ci.com/stijnrosaer/projectGP.svg?token=4KCFK8pLqiRpds8XDZQc&branch=master)](https://travis-ci.com/stijnrosaer/projectGP)
 
 ## Start of game
-when you open the game, it will automatically start the game
+when you open the game, the game will automatically start
 
 ## Movenment
 keyboard arrow left: move the player car left\
@@ -10,7 +10,7 @@ keyboard arrow up: accelerates the player car\
 keyboard arrow down: breaks the player car\
 releasing up and/or down key: slowing down the player car
 
-keyboard space bar: shoot a bullet (reload time of 1 second)
+keyboard space bar: shoot a bullet (reload time of 3 second)
 
 ## Points
 shooting any object: 10 points\
