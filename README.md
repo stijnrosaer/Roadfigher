@@ -1,4 +1,4 @@
-# projectGP [![Build Status](https://travis-ci.com/stijnrosaer/projectGP.svg?token=4KCFK8pLqiRpds8XDZQc&branch=master)](https://travis-ci.com/stijnrosaer/projectGP)
+# projectGP [![Build Status](https://travis-ci.com/stijnrosaer/Roadfighter.svg?token=4KCFK8pLqiRpds8XDZQc&branch=master)](https://travis-ci.com/stijnrosaer/Roadfighter)
 
 ## Start of game
 when you open the game, the game will automatically start
